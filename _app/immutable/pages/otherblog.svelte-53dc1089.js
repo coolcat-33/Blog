@@ -1242,21 +1242,21 @@ class FavoriteFilled extends SvelteComponent {
 }
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[17] = list[i];
-  child_ctx[18] = list;
-  child_ctx[19] = i;
+  child_ctx[16] = list[i];
+  child_ctx[17] = list;
+  child_ctx[18] = i;
   return child_ctx;
 }
 function get_each_context_1(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[20] = list[i];
+  child_ctx[19] = list[i];
   return child_ctx;
 }
 function create_if_block(ctx) {
   let br0;
   let br1;
   let t0;
-  let post_1;
+  let post;
   let t1;
   let textinput;
   let updating_value;
@@ -1272,31 +1272,31 @@ function create_if_block(ctx) {
   let br6;
   let br7;
   let current;
-  post_1 = new Post({
+  post = new Post({
     props: {
-      $$slots: { default: [create_default_slot_3] },
+      $$slots: { default: [create_default_slot_2] },
       $$scope: { ctx }
     }
   });
   function textinput_value_binding(value) {
-    ctx[14](value, ctx[19]);
+    ctx[14](value, ctx[18]);
   }
   let textinput_props = {
     size: "lg",
     placeholder: "Comment on this post"
   };
-  if (ctx[0][ctx[19]] !== void 0) {
-    textinput_props.value = ctx[0][ctx[19]];
+  if (ctx[0][ctx[18]] !== void 0) {
+    textinput_props.value = ctx[0][ctx[18]];
   }
   textinput = new TextInput({ props: textinput_props });
   binding_callbacks.push(() => bind(textinput, "value", textinput_value_binding));
   function click_handler_3() {
-    return ctx[15](ctx[17], ctx[19]);
+    return ctx[15](ctx[16], ctx[18]);
   }
   button = new Button({
     props: {
       kind: "tertiary",
-      $$slots: { default: [create_default_slot_2] },
+      $$slots: { default: [create_default_slot_1] },
       $$scope: { ctx }
     }
   });
@@ -1314,7 +1314,7 @@ function create_if_block(ctx) {
       br0 = element("br");
       br1 = element("br");
       t0 = space();
-      create_component(post_1.$$.fragment);
+      create_component(post.$$.fragment);
       t1 = space();
       create_component(textinput.$$.fragment);
       t2 = space();
@@ -1336,7 +1336,7 @@ function create_if_block(ctx) {
       br0 = claim_element(nodes, "BR", {});
       br1 = claim_element(nodes, "BR", {});
       t0 = claim_space(nodes);
-      claim_component(post_1.$$.fragment, nodes);
+      claim_component(post.$$.fragment, nodes);
       t1 = claim_space(nodes);
       claim_component(textinput.$$.fragment, nodes);
       t2 = claim_space(nodes);
@@ -1358,7 +1358,7 @@ function create_if_block(ctx) {
       insert_hydration(target, br0, anchor);
       insert_hydration(target, br1, anchor);
       insert_hydration(target, t0, anchor);
-      mount_component(post_1, target, anchor);
+      mount_component(post, target, anchor);
       insert_hydration(target, t1, anchor);
       mount_component(textinput, target, anchor);
       insert_hydration(target, t2, anchor);
@@ -1379,24 +1379,24 @@ function create_if_block(ctx) {
     },
     p(new_ctx, dirty) {
       ctx = new_ctx;
-      const post_1_changes = {};
-      if (dirty & 8388634) {
-        post_1_changes.$$scope = { dirty, ctx };
+      const post_changes = {};
+      if (dirty & 4194330) {
+        post_changes.$$scope = { dirty, ctx };
       }
-      post_1.$set(post_1_changes);
+      post.$set(post_changes);
       const textinput_changes = {};
       if (!updating_value && dirty & 1) {
         updating_value = true;
-        textinput_changes.value = ctx[0][ctx[19]];
+        textinput_changes.value = ctx[0][ctx[18]];
         add_flush_callback(() => updating_value = false);
       }
       textinput.$set(textinput_changes);
       const button_changes = {};
-      if (dirty & 8388608) {
+      if (dirty & 4194304) {
         button_changes.$$scope = { dirty, ctx };
       }
       button.$set(button_changes);
-      if (dirty & 28) {
+      if (dirty & 12) {
         each_value_1 = ctx[2];
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
@@ -1421,7 +1421,7 @@ function create_if_block(ctx) {
     i(local) {
       if (current)
         return;
-      transition_in(post_1.$$.fragment, local);
+      transition_in(post.$$.fragment, local);
       transition_in(textinput.$$.fragment, local);
       transition_in(button.$$.fragment, local);
       for (let i = 0; i < each_value_1.length; i += 1) {
@@ -1430,7 +1430,7 @@ function create_if_block(ctx) {
       current = true;
     },
     o(local) {
-      transition_out(post_1.$$.fragment, local);
+      transition_out(post.$$.fragment, local);
       transition_out(textinput.$$.fragment, local);
       transition_out(button.$$.fragment, local);
       each_blocks = each_blocks.filter(Boolean);
@@ -1446,7 +1446,7 @@ function create_if_block(ctx) {
         detach(br1);
       if (detaching)
         detach(t0);
-      destroy_component(post_1, detaching);
+      destroy_component(post, detaching);
       if (detaching)
         detach(t1);
       destroy_component(textinput, detaching);
@@ -1475,8 +1475,8 @@ function create_if_block(ctx) {
     }
   };
 }
-function create_default_slot_4(ctx) {
-  let t_value = ctx[17].user + "";
+function create_default_slot_3(ctx) {
+  let t_value = ctx[16].user + "";
   let t;
   return {
     c() {
@@ -1489,7 +1489,7 @@ function create_default_slot_4(ctx) {
       insert_hydration(target, t, anchor);
     },
     p(ctx2, dirty) {
-      if (dirty & 8 && t_value !== (t_value = ctx2[17].user + ""))
+      if (dirty & 8 && t_value !== (t_value = ctx2[16].user + ""))
         set_data(t, t_value);
     },
     d(detaching) {
@@ -1502,7 +1502,7 @@ function create_else_block(ctx) {
   let button;
   let current;
   function click_handler_2() {
-    return ctx[13](ctx[17]);
+    return ctx[13](ctx[16]);
   }
   button = new Button({
     props: {
@@ -1541,11 +1541,11 @@ function create_else_block(ctx) {
     }
   };
 }
-function create_if_block_3(ctx) {
+function create_if_block_2(ctx) {
   let button;
   let current;
   function click_handler_1() {
-    return ctx[12](ctx[17]);
+    return ctx[12](ctx[16]);
   }
   button = new Button({
     props: {
@@ -1584,10 +1584,10 @@ function create_if_block_3(ctx) {
     }
   };
 }
-function create_default_slot_3(ctx) {
+function create_default_slot_2(ctx) {
   let strong;
   let h2;
-  let t0_value = ctx[17].title + "";
+  let t0_value = ctx[16].title + "";
   let t0;
   let t1;
   let br0;
@@ -1599,7 +1599,7 @@ function create_default_slot_3(ctx) {
   let t4;
   let h6;
   let t5;
-  let t6_value = ctx[17].createdAt + "";
+  let t6_value = ctx[16].createdAt + "";
   let t6;
   let t7;
   let br2;
@@ -1612,37 +1612,37 @@ function create_default_slot_3(ctx) {
   let current_block_type_index;
   let if_block;
   let t10;
-  let t11_value = ctx[17].likes + "";
+  let t11_value = ctx[16].likes + "";
   let t11;
   let current;
   function viewer_value_binding(value) {
-    ctx[10](value, ctx[17]);
+    ctx[10](value, ctx[16]);
   }
   let viewer_props = {};
-  if (ctx[17].post !== void 0) {
-    viewer_props.value = ctx[17].post;
+  if (ctx[16].post !== void 0) {
+    viewer_props.value = ctx[16].post;
   }
   viewer = new Viewer({ props: viewer_props });
   binding_callbacks.push(() => bind(viewer, "value", viewer_value_binding));
   function click_handler() {
-    return ctx[11](ctx[17]);
+    return ctx[11](ctx[16]);
   }
   button = new Button({
     props: {
       kind: "ghost",
       size: "small",
-      $$slots: { default: [create_default_slot_4] },
+      $$slots: { default: [create_default_slot_3] },
       $$scope: { ctx }
     }
   });
   button.$on("click", click_handler);
-  const if_block_creators = [create_if_block_3, create_else_block];
+  const if_block_creators = [create_if_block_2, create_else_block];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (dirty & 24)
       show_if = null;
     if (show_if == null)
-      show_if = !!ctx2[17].users_liked.includes(ctx2[4].name);
+      show_if = !!ctx2[16].users_liked.includes(ctx2[4].name);
     if (show_if)
       return 0;
     return 1;
@@ -1734,19 +1734,19 @@ function create_default_slot_3(ctx) {
     },
     p(new_ctx, dirty) {
       ctx = new_ctx;
-      if ((!current || dirty & 8) && t0_value !== (t0_value = ctx[17].title + ""))
+      if ((!current || dirty & 8) && t0_value !== (t0_value = ctx[16].title + ""))
         set_data(t0, t0_value);
       const viewer_changes = {};
       if (!updating_value && dirty & 8) {
         updating_value = true;
-        viewer_changes.value = ctx[17].post;
+        viewer_changes.value = ctx[16].post;
         add_flush_callback(() => updating_value = false);
       }
       viewer.$set(viewer_changes);
-      if ((!current || dirty & 8) && t6_value !== (t6_value = ctx[17].createdAt + ""))
+      if ((!current || dirty & 8) && t6_value !== (t6_value = ctx[16].createdAt + ""))
         set_data(t6, t6_value);
       const button_changes = {};
-      if (dirty & 8388616) {
+      if (dirty & 4194312) {
         button_changes.$$scope = { dirty, ctx };
       }
       button.$set(button_changes);
@@ -1770,7 +1770,7 @@ function create_default_slot_3(ctx) {
         transition_in(if_block, 1);
         if_block.m(t10.parentNode, t10);
       }
-      if ((!current || dirty & 8) && t11_value !== (t11_value = ctx[17].likes + ""))
+      if ((!current || dirty & 8) && t11_value !== (t11_value = ctx[16].likes + ""))
         set_data(t11, t11_value);
     },
     i(local) {
@@ -1826,7 +1826,7 @@ function create_default_slot_3(ctx) {
     }
   };
 }
-function create_default_slot_2(ctx) {
+function create_default_slot_1(ctx) {
   let t;
   return {
     c() {
@@ -1844,12 +1844,12 @@ function create_default_slot_2(ctx) {
     }
   };
 }
-function create_if_block_2(ctx) {
+function create_if_block_1(ctx) {
   let comment;
   let current;
   comment = new Comment({
     props: {
-      $$slots: { default: [create_default_slot_1] },
+      $$slots: { default: [create_default_slot] },
       $$scope: { ctx }
     }
   });
@@ -1866,7 +1866,7 @@ function create_if_block_2(ctx) {
     },
     p(ctx2, dirty) {
       const comment_changes = {};
-      if (dirty & 8388612) {
+      if (dirty & 4194308) {
         comment_changes.$$scope = { dirty, ctx: ctx2 };
       }
       comment.$set(comment_changes);
@@ -1886,20 +1886,20 @@ function create_if_block_2(ctx) {
     }
   };
 }
-function create_default_slot_1(ctx) {
-  let t0_value = ctx[20].user_commented + "";
+function create_default_slot(ctx) {
+  let t0_value = ctx[19].user_commented + "";
   let t0;
   let t1;
   let br0;
   let br1;
   let t2;
-  let t3_value = ctx[20].comment + "";
+  let t3_value = ctx[19].comment + "";
   let t3;
   let t4;
   let br2;
   let br3;
   let t5;
-  let t6_value = ctx[20].createdAt.toLocaleString() + "";
+  let t6_value = ctx[19].createdAt.toLocaleString() + "";
   let t6;
   let t7;
   let br4;
@@ -1966,11 +1966,11 @@ function create_default_slot_1(ctx) {
       insert_hydration(target, br8, anchor);
     },
     p(ctx2, dirty) {
-      if (dirty & 4 && t0_value !== (t0_value = ctx2[20].user_commented + ""))
+      if (dirty & 4 && t0_value !== (t0_value = ctx2[19].user_commented + ""))
         set_data(t0, t0_value);
-      if (dirty & 4 && t3_value !== (t3_value = ctx2[20].comment + ""))
+      if (dirty & 4 && t3_value !== (t3_value = ctx2[19].comment + ""))
         set_data(t3, t3_value);
-      if (dirty & 4 && t6_value !== (t6_value = ctx2[20].createdAt.toLocaleString() + ""))
+      if (dirty & 4 && t6_value !== (t6_value = ctx2[19].createdAt.toLocaleString() + ""))
         set_data(t6, t6_value);
     },
     d(detaching) {
@@ -2011,173 +2011,10 @@ function create_default_slot_1(ctx) {
     }
   };
 }
-function create_if_block_1(ctx) {
-  let button;
-  let current;
-  function click_handler_4() {
-    return ctx[16](ctx[20]);
-  }
-  button = new Button({
-    props: {
-      size: "field",
-      type: "tertiary",
-      $$slots: { default: [create_default_slot] },
-      $$scope: { ctx }
-    }
-  });
-  button.$on("click", click_handler_4);
-  return {
-    c() {
-      create_component(button.$$.fragment);
-    },
-    l(nodes) {
-      claim_component(button.$$.fragment, nodes);
-    },
-    m(target, anchor) {
-      mount_component(button, target, anchor);
-      current = true;
-    },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      const button_changes = {};
-      if (dirty & 8388608) {
-        button_changes.$$scope = { dirty, ctx };
-      }
-      button.$set(button_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(button.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(button.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(button, detaching);
-    }
-  };
-}
-function create_default_slot(ctx) {
-  let t;
-  return {
-    c() {
-      t = text("Edit Comment");
-    },
-    l(nodes) {
-      t = claim_text(nodes, "Edit Comment");
-    },
-    m(target, anchor) {
-      insert_hydration(target, t, anchor);
-    },
-    d(detaching) {
-      if (detaching)
-        detach(t);
-    }
-  };
-}
 function create_each_block_1(ctx) {
-  let t;
-  let if_block1_anchor;
-  let current;
-  let if_block0 = ctx[20].post_id == ctx[17].id && create_if_block_2(ctx);
-  let if_block1 = ctx[4].name == ctx[20].user_commented && create_if_block_1(ctx);
-  return {
-    c() {
-      if (if_block0)
-        if_block0.c();
-      t = space();
-      if (if_block1)
-        if_block1.c();
-      if_block1_anchor = empty();
-    },
-    l(nodes) {
-      if (if_block0)
-        if_block0.l(nodes);
-      t = claim_space(nodes);
-      if (if_block1)
-        if_block1.l(nodes);
-      if_block1_anchor = empty();
-    },
-    m(target, anchor) {
-      if (if_block0)
-        if_block0.m(target, anchor);
-      insert_hydration(target, t, anchor);
-      if (if_block1)
-        if_block1.m(target, anchor);
-      insert_hydration(target, if_block1_anchor, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (ctx2[20].post_id == ctx2[17].id) {
-        if (if_block0) {
-          if_block0.p(ctx2, dirty);
-          if (dirty & 12) {
-            transition_in(if_block0, 1);
-          }
-        } else {
-          if_block0 = create_if_block_2(ctx2);
-          if_block0.c();
-          transition_in(if_block0, 1);
-          if_block0.m(t.parentNode, t);
-        }
-      } else if (if_block0) {
-        group_outros();
-        transition_out(if_block0, 1, 1, () => {
-          if_block0 = null;
-        });
-        check_outros();
-      }
-      if (ctx2[4].name == ctx2[20].user_commented) {
-        if (if_block1) {
-          if_block1.p(ctx2, dirty);
-          if (dirty & 20) {
-            transition_in(if_block1, 1);
-          }
-        } else {
-          if_block1 = create_if_block_1(ctx2);
-          if_block1.c();
-          transition_in(if_block1, 1);
-          if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
-        }
-      } else if (if_block1) {
-        group_outros();
-        transition_out(if_block1, 1, 1, () => {
-          if_block1 = null;
-        });
-        check_outros();
-      }
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(if_block0);
-      transition_in(if_block1);
-      current = true;
-    },
-    o(local) {
-      transition_out(if_block0);
-      transition_out(if_block1);
-      current = false;
-    },
-    d(detaching) {
-      if (if_block0)
-        if_block0.d(detaching);
-      if (detaching)
-        detach(t);
-      if (if_block1)
-        if_block1.d(detaching);
-      if (detaching)
-        detach(if_block1_anchor);
-    }
-  };
-}
-function create_each_block(ctx) {
   let if_block_anchor;
   let current;
-  let if_block = (ctx[1] == "" || ctx[1] == ctx[17].user) && create_if_block(ctx);
+  let if_block = ctx[19].post_id == ctx[16].id && create_if_block_1(ctx);
   return {
     c() {
       if (if_block)
@@ -2196,7 +2033,67 @@ function create_each_block(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      if (ctx2[1] == "" || ctx2[1] == ctx2[17].user) {
+      if (ctx2[19].post_id == ctx2[16].id) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+          if (dirty & 12) {
+            transition_in(if_block, 1);
+          }
+        } else {
+          if_block = create_if_block_1(ctx2);
+          if_block.c();
+          transition_in(if_block, 1);
+          if_block.m(if_block_anchor.parentNode, if_block_anchor);
+        }
+      } else if (if_block) {
+        group_outros();
+        transition_out(if_block, 1, 1, () => {
+          if_block = null;
+        });
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (if_block)
+        if_block.d(detaching);
+      if (detaching)
+        detach(if_block_anchor);
+    }
+  };
+}
+function create_each_block(ctx) {
+  let if_block_anchor;
+  let current;
+  let if_block = (ctx[1] == "" || ctx[1] == ctx[16].user) && create_if_block(ctx);
+  return {
+    c() {
+      if (if_block)
+        if_block.c();
+      if_block_anchor = empty();
+    },
+    l(nodes) {
+      if (if_block)
+        if_block.l(nodes);
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if (if_block)
+        if_block.m(target, anchor);
+      insert_hydration(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (ctx2[1] == "" || ctx2[1] == ctx2[16].user) {
         if (if_block) {
           if_block.p(ctx2, dirty);
           if (dirty & 10) {
@@ -2376,14 +2273,6 @@ function create_fragment(ctx) {
     }
   };
 }
-function edit_comment(comment) {
-  open = true;
-  edit = true;
-  newPost.title = post.title;
-  newPost.post = post.post;
-  currentObject = post.object;
-  console.log("sup");
-}
 function instance($$self, $$props, $$invalidate) {
   let posts;
   let post_comments;
@@ -2396,11 +2285,11 @@ function instance($$self, $$props, $$invalidate) {
   fetchBlogs($user.name);
   let searchUser = "";
   let user_comment = [];
-  async function upload(post2, comment) {
+  async function upload(post, comment) {
     Parse.initialize("AfiNKnlsASUOpcnt89tlHQ37vk9itLIBPhwq8arA", "RCLHA2TyiYdaHiDUcNGkHSwdo46xiohqc3igFZaJ");
     Parse.serverURL = "https://parseapi.back4app.com/";
     const post_comment = new Parse.Object("comments");
-    post_comment.set("post_id", post2.id);
+    post_comment.set("post_id", post.id);
     post_comment.set("user", $user.name);
     post_comment.set("comment", comment);
     try {
@@ -2413,17 +2302,17 @@ function instance($$self, $$props, $$invalidate) {
     $$invalidate(0, user_comment[index] = "", user_comment);
     comment = "";
   }
-  function like(post2) {
-    if (post2.users_liked.includes($user.name)) {
-      let index = post2.users_liked.indexOf($user.name);
-      post2.users_liked.splice(index, 1);
+  function like(post) {
+    if (post.users_liked.includes($user.name)) {
+      let index = post.users_liked.indexOf($user.name);
+      post.users_liked.splice(index, 1);
     } else {
-      post2.users_liked.push($user.name);
+      post.users_liked.push($user.name);
     }
-    post2.likes = post2.users_liked.length;
-    const obj = post2.object;
-    obj.set("users_liked", post2.users_liked);
-    obj.set("likes", post2.likes);
+    post.likes = post.users_liked.length;
+    const obj = post.object;
+    obj.set("users_liked", post.users_liked);
+    obj.set("likes", post.likes);
     obj.save();
     fetchBlogs($user.name);
   }
@@ -2431,29 +2320,28 @@ function instance($$self, $$props, $$invalidate) {
     searchUser = value;
     $$invalidate(1, searchUser);
   }
-  function viewer_value_binding(value, post2) {
-    if ($$self.$$.not_equal(post2.post, value)) {
-      post2.post = value;
+  function viewer_value_binding(value, post) {
+    if ($$self.$$.not_equal(post.post, value)) {
+      post.post = value;
       $$invalidate(3, posts), $$invalidate(8, $otherBlogs), $$invalidate(0, user_comment);
     }
   }
-  const click_handler = (post2) => $$invalidate(1, searchUser = post2.user);
-  const click_handler_1 = (post2) => like(post2);
-  const click_handler_2 = (post2) => like(post2);
+  const click_handler = (post) => $$invalidate(1, searchUser = post.user);
+  const click_handler_1 = (post) => like(post);
+  const click_handler_2 = (post) => like(post);
   function textinput_value_binding(value, i) {
     if ($$self.$$.not_equal(user_comment[i], value)) {
       user_comment[i] = value;
       $$invalidate(0, user_comment);
     }
   }
-  const click_handler_3 = (post2, i) => upload(post2, user_comment[i]);
-  const click_handler_4 = (comment) => edit_comment();
+  const click_handler_3 = (post, i) => upload(post, user_comment[i]);
   $$self.$$.update = () => {
     if ($$self.$$.dirty & 257) {
       $$invalidate(3, posts = $otherBlogs.map((entry) => {
         let id = entry.id;
         let title = entry.title;
-        let post2 = entry.post;
+        let post = entry.post;
         let likes = entry.likes;
         let users_liked = entry.users_liked;
         let user2 = entry.user;
@@ -2465,7 +2353,7 @@ function instance($$self, $$props, $$invalidate) {
         return {
           id,
           title,
-          post: post2,
+          post,
           comment,
           comments: [],
           likes,
@@ -2510,8 +2398,7 @@ function instance($$self, $$props, $$invalidate) {
     click_handler_1,
     click_handler_2,
     textinput_value_binding,
-    click_handler_3,
-    click_handler_4
+    click_handler_3
   ];
 }
 class Otherblog extends SvelteComponent {
