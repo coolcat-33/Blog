@@ -32,7 +32,7 @@ const fetchBlogs = async (username) => {
     otherUsers.set(users);
   });
 };
-var Post_svelte_svelte_type_style_lang = /* @__PURE__ */ (() => ".card.svelte-1lr02gn{box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);transition:0.3s;border-radius:5px}.card.svelte-1lr02gn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2)}")();
+var Post_svelte_svelte_type_style_lang = /* @__PURE__ */ (() => ".card.svelte-f0u4s1{box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);transition:0.3s;border-radius:5px}.card.svelte-f0u4s1:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2)}")();
 function create_fragment(ctx) {
   let div;
   let current;
@@ -54,7 +54,7 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(div, "class", "card svelte-1lr02gn");
+      attr(div, "class", "card svelte-f0u4s1");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
