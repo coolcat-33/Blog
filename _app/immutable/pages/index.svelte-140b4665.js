@@ -1,4 +1,4 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal } from "../chunks/index-7843d973.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal } from "../chunks/index-f6cf4e8a.js";
 async function load() {
   return { status: 301, redirect: `/blog/myblog` };
 }

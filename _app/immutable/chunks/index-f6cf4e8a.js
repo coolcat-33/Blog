@@ -42,6 +42,11 @@ function subscribe(store, ...callbacks) {
   const unsub = store.subscribe(...callbacks);
   return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
 }
+function get_store_value(store) {
+  let value;
+  subscribe(store, (_) => value = _)();
+  return value;
+}
 function component_subscribe(component, store, callback) {
   component.$$.on_destroy.push(subscribe(store, callback));
 }
@@ -899,4 +904,4 @@ class SvelteComponent {
     }
   }
 }
-export { create_bidirectional_transition as $, get_spread_object as A, destroy_component as B, assign as C, tick as D, noop as E, compute_rest_props as F, compute_slots as G, exclude_internal_props as H, bubble as I, binding_callbacks as J, create_slot as K, toggle_class as L, update_slot_base as M, get_all_dirty_from_scope as N, get_slot_changes as O, set_attributes as P, append_hydration as Q, listen as R, SvelteComponent as S, run_all as T, svg_element as U, claim_svg_element as V, set_svg_attributes as W, add_render_callback as X, add_flush_callback as Y, component_subscribe as Z, bind as _, children as a, stop_propagation as a0, createEventDispatcher as a1, getContext as a2, query_selector_all as a3, src_url_equal as a4, set_store_value as a5, not_equal as a6, destroy_each as a7, onDestroy as a8, set_input_value as a9, attr as b, claim_element as c, detach as d, element as e, set_style as f, insert_hydration as g, claim_text as h, init as i, set_data as j, space as k, empty as l, claim_space as m, group_outros as n, transition_out as o, check_outros as p, transition_in as q, setContext as r, safe_not_equal as s, text as t, afterUpdate as u, onMount as v, create_component as w, claim_component as x, mount_component as y, get_spread_update as z };
+export { create_bidirectional_transition as $, get_spread_object as A, destroy_component as B, assign as C, tick as D, noop as E, compute_rest_props as F, compute_slots as G, exclude_internal_props as H, bubble as I, binding_callbacks as J, create_slot as K, toggle_class as L, update_slot_base as M, get_all_dirty_from_scope as N, get_slot_changes as O, set_attributes as P, append_hydration as Q, listen as R, SvelteComponent as S, run_all as T, svg_element as U, claim_svg_element as V, set_svg_attributes as W, add_render_callback as X, add_flush_callback as Y, component_subscribe as Z, bind as _, children as a, stop_propagation as a0, createEventDispatcher as a1, getContext as a2, query_selector_all as a3, src_url_equal as a4, set_store_value as a5, get_store_value as a6, not_equal as a7, destroy_each as a8, onDestroy as a9, set_input_value as aa, attr as b, claim_element as c, detach as d, element as e, set_style as f, insert_hydration as g, claim_text as h, init as i, set_data as j, space as k, empty as l, claim_space as m, group_outros as n, transition_out as o, check_outros as p, transition_in as q, setContext as r, safe_not_equal as s, text as t, afterUpdate as u, onMount as v, create_component as w, claim_component as x, mount_component as y, get_spread_update as z };

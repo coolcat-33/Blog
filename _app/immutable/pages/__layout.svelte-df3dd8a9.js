@@ -17,11 +17,10 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-import { S as SvelteComponent, i as init, s as safe_not_equal, l as empty, g as insert_hydration, n as group_outros, o as transition_out, p as check_outros, q as transition_in, d as detach, F as compute_rest_props, G as compute_slots, C as assign, H as exclude_internal_props, I as bubble, J as binding_callbacks, K as create_slot, e as element, c as claim_element, a as children, L as toggle_class, M as update_slot_base, N as get_all_dirty_from_scope, O as get_slot_changes, k as space, m as claim_space, P as set_attributes, Q as append_hydration, R as listen, z as get_spread_update, T as run_all, w as create_component, x as claim_component, y as mount_component, B as destroy_component, U as svg_element, t as text, V as claim_svg_element, h as claim_text, j as set_data, b as attr, W as set_svg_attributes, E as noop, X as add_render_callback, Y as add_flush_callback, Z as component_subscribe, _ as bind, $ as create_bidirectional_transition, a0 as stop_propagation, a1 as createEventDispatcher, a2 as getContext, v as onMount, a3 as query_selector_all, a4 as src_url_equal, a5 as set_store_value } from "../chunks/index-7843d973.js";
-import { u as user } from "../chunks/HeaderSearch.svelte_svelte_type_style_lang-a4bfa871.js";
-import { B as Button } from "../chunks/Button-60074b90.js";
-import { C as Close } from "../chunks/Close-d809ac48.js";
-import { w as writable } from "../chunks/index-dfa38e18.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, l as empty, g as insert_hydration, n as group_outros, o as transition_out, p as check_outros, q as transition_in, d as detach, F as compute_rest_props, G as compute_slots, C as assign, H as exclude_internal_props, I as bubble, J as binding_callbacks, K as create_slot, e as element, c as claim_element, a as children, L as toggle_class, M as update_slot_base, N as get_all_dirty_from_scope, O as get_slot_changes, k as space, m as claim_space, P as set_attributes, Q as append_hydration, R as listen, z as get_spread_update, T as run_all, w as create_component, x as claim_component, y as mount_component, B as destroy_component, U as svg_element, t as text, V as claim_svg_element, h as claim_text, j as set_data, b as attr, W as set_svg_attributes, E as noop, X as add_render_callback, Y as add_flush_callback, Z as component_subscribe, _ as bind, $ as create_bidirectional_transition, a0 as stop_propagation, a1 as createEventDispatcher, a2 as getContext, v as onMount, a3 as query_selector_all, a4 as src_url_equal, a5 as set_store_value } from "../chunks/index-f6cf4e8a.js";
+import { u as user, B as Button } from "../chunks/HeaderSearch.svelte_svelte_type_style_lang-6bc14e48.js";
+import { C as Close } from "../chunks/Close-bf4cda3e.js";
+import { w as writable } from "../chunks/index-d888c928.js";
 import { c as client } from "../chunks/singletons-d1fb5791.js";
 const get_icon_slot_changes_1 = (dirty) => ({});
 const get_icon_slot_context_1 = (ctx) => ({});
@@ -4026,107 +4025,67 @@ const page = {
 };
 function create_default_slot_13(ctx) {
   let headernavitem0;
-  let t0;
+  let t;
   let headernavitem1;
-  let t1;
-  let headernavitem2;
-  let t2;
-  let headernavitem3;
   let current;
   headernavitem0 = new HeaderNavItem({
     props: {
-      isSelected: ctx[2] === "/myblog",
+      isSelected: ctx[2] === "/blog/myblog",
       href: "myblog",
       text: "My Blog"
     }
   });
   headernavitem1 = new HeaderNavItem({
     props: {
-      isSelected: ctx[2] === "/otherblog",
+      isSelected: ctx[2] === "/blog/otherblog",
       href: "otherblog",
       text: "Other Blogs"
     }
   });
-  headernavitem2 = new HeaderNavItem({
-    props: {
-      isSelected: ctx[2] === "/createpost",
-      href: "createpost",
-      text: "Add a post for my Blog"
-    }
-  });
-  headernavitem3 = new HeaderNavItem({
-    props: { text: "This app was inspired by BXB8508" }
-  });
   return {
     c() {
       create_component(headernavitem0.$$.fragment);
-      t0 = space();
+      t = space();
       create_component(headernavitem1.$$.fragment);
-      t1 = space();
-      create_component(headernavitem2.$$.fragment);
-      t2 = space();
-      create_component(headernavitem3.$$.fragment);
     },
     l(nodes) {
       claim_component(headernavitem0.$$.fragment, nodes);
-      t0 = claim_space(nodes);
+      t = claim_space(nodes);
       claim_component(headernavitem1.$$.fragment, nodes);
-      t1 = claim_space(nodes);
-      claim_component(headernavitem2.$$.fragment, nodes);
-      t2 = claim_space(nodes);
-      claim_component(headernavitem3.$$.fragment, nodes);
     },
     m(target, anchor) {
       mount_component(headernavitem0, target, anchor);
-      insert_hydration(target, t0, anchor);
+      insert_hydration(target, t, anchor);
       mount_component(headernavitem1, target, anchor);
-      insert_hydration(target, t1, anchor);
-      mount_component(headernavitem2, target, anchor);
-      insert_hydration(target, t2, anchor);
-      mount_component(headernavitem3, target, anchor);
       current = true;
     },
     p(ctx2, dirty) {
       const headernavitem0_changes = {};
       if (dirty & 4)
-        headernavitem0_changes.isSelected = ctx2[2] === "/myblog";
+        headernavitem0_changes.isSelected = ctx2[2] === "/blog/myblog";
       headernavitem0.$set(headernavitem0_changes);
       const headernavitem1_changes = {};
       if (dirty & 4)
-        headernavitem1_changes.isSelected = ctx2[2] === "/otherblog";
+        headernavitem1_changes.isSelected = ctx2[2] === "/blog/otherblog";
       headernavitem1.$set(headernavitem1_changes);
-      const headernavitem2_changes = {};
-      if (dirty & 4)
-        headernavitem2_changes.isSelected = ctx2[2] === "/createpost";
-      headernavitem2.$set(headernavitem2_changes);
     },
     i(local) {
       if (current)
         return;
       transition_in(headernavitem0.$$.fragment, local);
       transition_in(headernavitem1.$$.fragment, local);
-      transition_in(headernavitem2.$$.fragment, local);
-      transition_in(headernavitem3.$$.fragment, local);
       current = true;
     },
     o(local) {
       transition_out(headernavitem0.$$.fragment, local);
       transition_out(headernavitem1.$$.fragment, local);
-      transition_out(headernavitem2.$$.fragment, local);
-      transition_out(headernavitem3.$$.fragment, local);
       current = false;
     },
     d(detaching) {
       destroy_component(headernavitem0, detaching);
       if (detaching)
-        detach(t0);
+        detach(t);
       destroy_component(headernavitem1, detaching);
-      if (detaching)
-        detach(t1);
-      destroy_component(headernavitem2, detaching);
-      if (detaching)
-        detach(t2);
-      destroy_component(headernavitem3, detaching);
     }
   };
 }
@@ -4466,58 +4425,78 @@ function create_default_slot_6(ctx) {
   };
 }
 function create_default_slot_5(ctx) {
-  let headeraction;
+  let headeraction0;
+  let t;
+  let headeraction1;
   let updating_isOpen;
   let current;
-  function headeraction_isOpen_binding(value) {
+  headeraction0 = new HeaderAction({
+    props: {
+      icon: "",
+      transition: "false",
+      text: "This app was inspired by BXB8508"
+    }
+  });
+  function headeraction1_isOpen_binding(value) {
     ctx[7](value);
   }
-  let headeraction_props = {
+  let headeraction1_props = {
     icon: UserAvatarFilledAlt,
     closeIcon: UserAvatarFilledAlt,
     $$slots: { default: [create_default_slot_6] },
     $$scope: { ctx }
   };
   if (ctx[1] !== void 0) {
-    headeraction_props.isOpen = ctx[1];
+    headeraction1_props.isOpen = ctx[1];
   }
-  headeraction = new HeaderAction({ props: headeraction_props });
-  binding_callbacks.push(() => bind(headeraction, "isOpen", headeraction_isOpen_binding));
+  headeraction1 = new HeaderAction({ props: headeraction1_props });
+  binding_callbacks.push(() => bind(headeraction1, "isOpen", headeraction1_isOpen_binding));
   return {
     c() {
-      create_component(headeraction.$$.fragment);
+      create_component(headeraction0.$$.fragment);
+      t = space();
+      create_component(headeraction1.$$.fragment);
     },
     l(nodes) {
-      claim_component(headeraction.$$.fragment, nodes);
+      claim_component(headeraction0.$$.fragment, nodes);
+      t = claim_space(nodes);
+      claim_component(headeraction1.$$.fragment, nodes);
     },
     m(target, anchor) {
-      mount_component(headeraction, target, anchor);
+      mount_component(headeraction0, target, anchor);
+      insert_hydration(target, t, anchor);
+      mount_component(headeraction1, target, anchor);
       current = true;
     },
     p(ctx2, dirty) {
-      const headeraction_changes = {};
+      const headeraction1_changes = {};
       if (dirty & 1032) {
-        headeraction_changes.$$scope = { dirty, ctx: ctx2 };
+        headeraction1_changes.$$scope = { dirty, ctx: ctx2 };
       }
       if (!updating_isOpen && dirty & 2) {
         updating_isOpen = true;
-        headeraction_changes.isOpen = ctx2[1];
+        headeraction1_changes.isOpen = ctx2[1];
         add_flush_callback(() => updating_isOpen = false);
       }
-      headeraction.$set(headeraction_changes);
+      headeraction1.$set(headeraction1_changes);
     },
     i(local) {
       if (current)
         return;
-      transition_in(headeraction.$$.fragment, local);
+      transition_in(headeraction0.$$.fragment, local);
+      transition_in(headeraction1.$$.fragment, local);
       current = true;
     },
     o(local) {
-      transition_out(headeraction.$$.fragment, local);
+      transition_out(headeraction0.$$.fragment, local);
+      transition_out(headeraction1.$$.fragment, local);
       current = false;
     },
     d(detaching) {
-      destroy_component(headeraction, detaching);
+      destroy_component(headeraction0, detaching);
+      if (detaching)
+        detach(t);
+      destroy_component(headeraction1, detaching);
     }
   };
 }
@@ -5097,7 +5076,7 @@ function instance($$self, $$props, $$invalidate) {
       goto("", { replaceState: true });
     });
   }
-  function headeraction_isOpen_binding(value) {
+  function headeraction1_isOpen_binding(value) {
     isOpen1 = value;
     $$invalidate(1, isOpen1);
   }
@@ -5126,7 +5105,7 @@ function instance($$self, $$props, $$invalidate) {
     logout,
     $page,
     slots,
-    headeraction_isOpen_binding,
+    headeraction1_isOpen_binding,
     sidenav_isOpen_binding,
     header_isSideNavOpen_binding,
     $$scope
