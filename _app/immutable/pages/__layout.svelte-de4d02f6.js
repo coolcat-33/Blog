@@ -5094,7 +5094,7 @@ function instance($$self, $$props, $$invalidate) {
     auth2.signOut().then(() => {
       set_store_value(user, $user["userLoggedIn"] = false, $user);
       $$invalidate(1, isOpen1 = false);
-      goto("login", { replaceState: true });
+      goto("", { replaceState: true });
     });
   }
   function headeraction_isOpen_binding(value) {
