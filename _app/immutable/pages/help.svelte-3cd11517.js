@@ -1,4 +1,4 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, e as element, t as text, k as space, c as claim_element, a as children, h as claim_text, d as detach, m as claim_space, g as insert_hydration, Q as append_hydration, E as noop } from "../chunks/index-2a8915ed.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, e as element, t as text, k as space, c as claim_element, a as children, h as claim_text, d as detach, m as claim_space, g as insert_hydration, Q as append_hydration, E as noop } from "../chunks/index-fe8f50da.js";
 function create_fragment(ctx) {
   let h30;
   let t0;
@@ -95,7 +95,7 @@ function create_fragment(ctx) {
       br16 = element("br");
       t20 = space();
       h53 = element("h5");
-      t21 = text("When you create a post or a comment, please wait for a few seconds before reclicking the submit button. Reclicking the submit button will result in duplicate posts/comments.");
+      t21 = text("When you create/edit/delete a post or a comment, please wait for a couple seconds before reclicking the submit button. Reclicking the submit button multiple times will result in duplicate posts/comments.");
     },
     l(nodes) {
       h30 = claim_element(nodes, "H3", {});
@@ -159,7 +159,7 @@ function create_fragment(ctx) {
       t20 = claim_space(nodes);
       h53 = claim_element(nodes, "H5", {});
       var h53_nodes = children(h53);
-      t21 = claim_text(h53_nodes, "When you create a post or a comment, please wait for a few seconds before reclicking the submit button. Reclicking the submit button will result in duplicate posts/comments.");
+      t21 = claim_text(h53_nodes, "When you create/edit/delete a post or a comment, please wait for a couple seconds before reclicking the submit button. Reclicking the submit button multiple times will result in duplicate posts/comments.");
       h53_nodes.forEach(detach);
     },
     m(target, anchor) {

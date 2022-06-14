@@ -1,10 +1,10 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, e as element, w as create_component, c as claim_element, a as children, x as claim_component, d as detach, b as attr, L as toggle_class, g as insert_hydration, y as mount_component, R as listen, q as transition_in, o as transition_out, B as destroy_component, M as update_slot_base, N as get_all_dirty_from_scope, O as get_slot_changes, K as create_slot, k as space, m as claim_space, Q as append_hydration, n as group_outros, p as check_outros, C as assign, P as set_attributes, z as get_spread_update, T as run_all, F as compute_rest_props, X as createEventDispatcher, Y as component_subscribe, u as afterUpdate, H as exclude_internal_props, a7 as set_store_value, t as text, h as claim_text, j as set_data, l as empty, aa as destroy_each, I as bubble, J as binding_callbacks, $ as bind, _ as add_flush_callback } from "../chunks/index-2a8915ed.js";
-import { f as fetchBlogs, C as Comment, P as Post, c as comments, b as blogs } from "../chunks/comments-c62e2c03.js";
-import { t as trackModal } from "../chunks/HeaderSearch.svelte_svelte_type_style_lang-0c4c96c7.js";
-import { C as Close, B as Button, u as user } from "../chunks/Close-7cc6014a.js";
-import { w as writable } from "../chunks/index-58edbb8c.js";
-import Createpost from "./createpost.svelte-2e24d6ba.js";
-import { V as Viewer } from "../chunks/viewer-5a667556.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, e as element, w as create_component, c as claim_element, a as children, x as claim_component, d as detach, b as attr, L as toggle_class, g as insert_hydration, y as mount_component, R as listen, q as transition_in, o as transition_out, B as destroy_component, M as update_slot_base, N as get_all_dirty_from_scope, O as get_slot_changes, K as create_slot, k as space, m as claim_space, Q as append_hydration, n as group_outros, p as check_outros, C as assign, P as set_attributes, z as get_spread_update, T as run_all, F as compute_rest_props, a1 as createEventDispatcher, Z as component_subscribe, u as afterUpdate, H as exclude_internal_props, a6 as set_store_value, t as text, h as claim_text, j as set_data, l as empty, a9 as destroy_each, I as bubble, J as binding_callbacks, U as svg_element, V as claim_svg_element, W as set_svg_attributes, E as noop, _ as bind, Y as add_flush_callback } from "../chunks/index-fe8f50da.js";
+import { f as fetchBlogs, C as Comment, P as Post, c as comments, b as blogs } from "../chunks/comments-b5a00511.js";
+import { t as trackModal } from "../chunks/HeaderSearch.svelte_svelte_type_style_lang-50804c02.js";
+import { C as Close, B as Button, u as user } from "../chunks/Close-d254d283.js";
+import { w as writable } from "../chunks/index-8a7c489c.js";
+import Createpost from "./createpost.svelte-d6687101.js";
+import { V as Viewer } from "../chunks/viewer-72edec5c.js";
 function get_each_context$1(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[55] = list[i];
@@ -278,7 +278,7 @@ function create_if_block_3(ctx) {
     }
   };
 }
-function create_if_block$1(ctx) {
+function create_if_block$3(ctx) {
   let div;
   let current_block_type_index;
   let if_block;
@@ -646,7 +646,7 @@ function create_default_slot$1(ctx) {
     }
   };
 }
-function create_fragment$1(ctx) {
+function create_fragment$3(ctx) {
   let div3;
   let div2;
   let div0;
@@ -676,7 +676,7 @@ function create_fragment$1(ctx) {
   const default_slot_template = ctx[31].default;
   const default_slot = create_slot(default_slot_template, ctx, ctx[50], null);
   let if_block3 = ctx[10] && create_if_block_3();
-  let if_block4 = !ctx[5] && create_if_block$1(ctx);
+  let if_block4 = !ctx[5] && create_if_block$3(ctx);
   let div3_levels = [{ role: "presentation" }, { id: ctx[18] }, ctx[28]];
   let div3_data = {};
   for (let i = 0; i < div3_levels.length; i += 1) {
@@ -949,7 +949,7 @@ function create_fragment$1(ctx) {
             transition_in(if_block4, 1);
           }
         } else {
-          if_block4 = create_if_block$1(ctx2);
+          if_block4 = create_if_block$3(ctx2);
           if_block4.c();
           transition_in(if_block4, 1);
           if_block4.m(div2, null);
@@ -1033,7 +1033,7 @@ function create_fragment$1(ctx) {
     }
   };
 }
-function instance$1($$self, $$props, $$invalidate) {
+function instance$3($$self, $$props, $$invalidate) {
   let modalLabelId;
   let modalHeadingId;
   let modalBodyId;
@@ -1323,7 +1323,7 @@ function instance$1($$self, $$props, $$invalidate) {
 class Modal extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1, create_fragment$1, safe_not_equal, {
+    init(this, options, instance$3, create_fragment$3, safe_not_equal, {
       size: 2,
       open: 0,
       danger: 3,
@@ -1348,19 +1348,319 @@ class Modal extends SvelteComponent {
     }, null, [-1, -1]);
   }
 }
+function create_if_block$2(ctx) {
+  let title_1;
+  let t;
+  return {
+    c() {
+      title_1 = svg_element("title");
+      t = text(ctx[1]);
+    },
+    l(nodes) {
+      title_1 = claim_svg_element(nodes, "title", {});
+      var title_1_nodes = children(title_1);
+      t = claim_text(title_1_nodes, ctx[1]);
+      title_1_nodes.forEach(detach);
+    },
+    m(target, anchor) {
+      insert_hydration(target, title_1, anchor);
+      append_hydration(title_1, t);
+    },
+    p(ctx2, dirty) {
+      if (dirty & 2)
+        set_data(t, ctx2[1]);
+    },
+    d(detaching) {
+      if (detaching)
+        detach(title_1);
+    }
+  };
+}
+function create_fragment$2(ctx) {
+  let svg;
+  let path0;
+  let path1;
+  let if_block = ctx[1] && create_if_block$2(ctx);
+  let svg_levels = [
+    { xmlns: "http://www.w3.org/2000/svg" },
+    { viewBox: "0 0 32 32" },
+    { fill: "currentColor" },
+    { preserveAspectRatio: "xMidYMid meet" },
+    { width: ctx[0] },
+    { height: ctx[0] },
+    ctx[2],
+    ctx[3]
+  ];
+  let svg_data = {};
+  for (let i = 0; i < svg_levels.length; i += 1) {
+    svg_data = assign(svg_data, svg_levels[i]);
+  }
+  return {
+    c() {
+      svg = svg_element("svg");
+      if (if_block)
+        if_block.c();
+      path0 = svg_element("path");
+      path1 = svg_element("path");
+      this.h();
+    },
+    l(nodes) {
+      svg = claim_svg_element(nodes, "svg", {
+        xmlns: true,
+        viewBox: true,
+        fill: true,
+        preserveAspectRatio: true,
+        width: true,
+        height: true
+      });
+      var svg_nodes = children(svg);
+      if (if_block)
+        if_block.l(svg_nodes);
+      path0 = claim_svg_element(svg_nodes, "path", { d: true });
+      children(path0).forEach(detach);
+      path1 = claim_svg_element(svg_nodes, "path", { d: true });
+      children(path1).forEach(detach);
+      svg_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(path0, "d", "M12 12H14V24H12zM18 12H20V24H18z");
+      attr(path1, "d", "M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z");
+      set_svg_attributes(svg, svg_data);
+    },
+    m(target, anchor) {
+      insert_hydration(target, svg, anchor);
+      if (if_block)
+        if_block.m(svg, null);
+      append_hydration(svg, path0);
+      append_hydration(svg, path1);
+    },
+    p(ctx2, [dirty]) {
+      if (ctx2[1]) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+        } else {
+          if_block = create_if_block$2(ctx2);
+          if_block.c();
+          if_block.m(svg, path0);
+        }
+      } else if (if_block) {
+        if_block.d(1);
+        if_block = null;
+      }
+      set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [
+        { xmlns: "http://www.w3.org/2000/svg" },
+        { viewBox: "0 0 32 32" },
+        { fill: "currentColor" },
+        { preserveAspectRatio: "xMidYMid meet" },
+        dirty & 1 && { width: ctx2[0] },
+        dirty & 1 && { height: ctx2[0] },
+        dirty & 4 && ctx2[2],
+        dirty & 8 && ctx2[3]
+      ]));
+    },
+    i: noop,
+    o: noop,
+    d(detaching) {
+      if (detaching)
+        detach(svg);
+      if (if_block)
+        if_block.d();
+    }
+  };
+}
+function instance$2($$self, $$props, $$invalidate) {
+  let labelled;
+  let attributes;
+  const omit_props_names = ["size", "title"];
+  let $$restProps = compute_rest_props($$props, omit_props_names);
+  let { size = 16 } = $$props;
+  let { title = void 0 } = $$props;
+  $$self.$$set = ($$new_props) => {
+    $$invalidate(5, $$props = assign(assign({}, $$props), exclude_internal_props($$new_props)));
+    $$invalidate(3, $$restProps = compute_rest_props($$props, omit_props_names));
+    if ("size" in $$new_props)
+      $$invalidate(0, size = $$new_props.size);
+    if ("title" in $$new_props)
+      $$invalidate(1, title = $$new_props.title);
+  };
+  $$self.$$.update = () => {
+    $$invalidate(4, labelled = $$props["aria-label"] || $$props["aria-labelledby"] || title);
+    $$invalidate(2, attributes = {
+      "aria-hidden": labelled ? void 0 : true,
+      role: labelled ? "img" : void 0,
+      focusable: Number($$props["tabindex"]) === 0 ? true : void 0
+    });
+  };
+  $$props = exclude_internal_props($$props);
+  return [size, title, attributes, $$restProps, labelled];
+}
+class TrashCan extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$2, create_fragment$2, safe_not_equal, { size: 0, title: 1 });
+  }
+}
+function create_if_block$1(ctx) {
+  let title_1;
+  let t;
+  return {
+    c() {
+      title_1 = svg_element("title");
+      t = text(ctx[1]);
+    },
+    l(nodes) {
+      title_1 = claim_svg_element(nodes, "title", {});
+      var title_1_nodes = children(title_1);
+      t = claim_text(title_1_nodes, ctx[1]);
+      title_1_nodes.forEach(detach);
+    },
+    m(target, anchor) {
+      insert_hydration(target, title_1, anchor);
+      append_hydration(title_1, t);
+    },
+    p(ctx2, dirty) {
+      if (dirty & 2)
+        set_data(t, ctx2[1]);
+    },
+    d(detaching) {
+      if (detaching)
+        detach(title_1);
+    }
+  };
+}
+function create_fragment$1(ctx) {
+  let svg;
+  let path;
+  let if_block = ctx[1] && create_if_block$1(ctx);
+  let svg_levels = [
+    { xmlns: "http://www.w3.org/2000/svg" },
+    { viewBox: "0 0 32 32" },
+    { fill: "currentColor" },
+    { preserveAspectRatio: "xMidYMid meet" },
+    { width: ctx[0] },
+    { height: ctx[0] },
+    ctx[2],
+    ctx[3]
+  ];
+  let svg_data = {};
+  for (let i = 0; i < svg_levels.length; i += 1) {
+    svg_data = assign(svg_data, svg_levels[i]);
+  }
+  return {
+    c() {
+      svg = svg_element("svg");
+      if (if_block)
+        if_block.c();
+      path = svg_element("path");
+      this.h();
+    },
+    l(nodes) {
+      svg = claim_svg_element(nodes, "svg", {
+        xmlns: true,
+        viewBox: true,
+        fill: true,
+        preserveAspectRatio: true,
+        width: true,
+        height: true
+      });
+      var svg_nodes = children(svg);
+      if (if_block)
+        if_block.l(svg_nodes);
+      path = claim_svg_element(svg_nodes, "path", { d: true });
+      children(path).forEach(detach);
+      svg_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(path, "d", "M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z");
+      set_svg_attributes(svg, svg_data);
+    },
+    m(target, anchor) {
+      insert_hydration(target, svg, anchor);
+      if (if_block)
+        if_block.m(svg, null);
+      append_hydration(svg, path);
+    },
+    p(ctx2, [dirty]) {
+      if (ctx2[1]) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+        } else {
+          if_block = create_if_block$1(ctx2);
+          if_block.c();
+          if_block.m(svg, path);
+        }
+      } else if (if_block) {
+        if_block.d(1);
+        if_block = null;
+      }
+      set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [
+        { xmlns: "http://www.w3.org/2000/svg" },
+        { viewBox: "0 0 32 32" },
+        { fill: "currentColor" },
+        { preserveAspectRatio: "xMidYMid meet" },
+        dirty & 1 && { width: ctx2[0] },
+        dirty & 1 && { height: ctx2[0] },
+        dirty & 4 && ctx2[2],
+        dirty & 8 && ctx2[3]
+      ]));
+    },
+    i: noop,
+    o: noop,
+    d(detaching) {
+      if (detaching)
+        detach(svg);
+      if (if_block)
+        if_block.d();
+    }
+  };
+}
+function instance$1($$self, $$props, $$invalidate) {
+  let labelled;
+  let attributes;
+  const omit_props_names = ["size", "title"];
+  let $$restProps = compute_rest_props($$props, omit_props_names);
+  let { size = 16 } = $$props;
+  let { title = void 0 } = $$props;
+  $$self.$$set = ($$new_props) => {
+    $$invalidate(5, $$props = assign(assign({}, $$props), exclude_internal_props($$new_props)));
+    $$invalidate(3, $$restProps = compute_rest_props($$props, omit_props_names));
+    if ("size" in $$new_props)
+      $$invalidate(0, size = $$new_props.size);
+    if ("title" in $$new_props)
+      $$invalidate(1, title = $$new_props.title);
+  };
+  $$self.$$.update = () => {
+    $$invalidate(4, labelled = $$props["aria-label"] || $$props["aria-labelledby"] || title);
+    $$invalidate(2, attributes = {
+      "aria-hidden": labelled ? void 0 : true,
+      role: labelled ? "img" : void 0,
+      focusable: Number($$props["tabindex"]) === 0 ? true : void 0
+    });
+  };
+  $$props = exclude_internal_props($$props);
+  return [size, title, attributes, $$restProps, labelled];
+}
+class Edit extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$1, create_fragment$1, safe_not_equal, { size: 0, title: 1 });
+  }
+}
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[12] = list[i];
-  child_ctx[13] = list;
-  child_ctx[14] = i;
+  child_ctx[19] = list[i];
+  child_ctx[20] = list;
+  child_ctx[21] = i;
   return child_ctx;
 }
 function get_each_context_1(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[15] = list[i];
+  child_ctx[22] = list[i];
   return child_ctx;
 }
-function create_default_slot_3(ctx) {
+function create_default_slot_5(ctx) {
   let t;
   return {
     c() {
@@ -1378,10 +1678,46 @@ function create_default_slot_3(ctx) {
     }
   };
 }
+function create_default_slot_4(ctx) {
+  let t;
+  return {
+    c() {
+      t = text("Edit Post");
+    },
+    l(nodes) {
+      t = claim_text(nodes, "Edit Post");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t, anchor);
+    },
+    d(detaching) {
+      if (detaching)
+        detach(t);
+    }
+  };
+}
+function create_default_slot_3(ctx) {
+  let t;
+  return {
+    c() {
+      t = text("Delete Post");
+    },
+    l(nodes) {
+      t = claim_text(nodes, "Delete Post");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t, anchor);
+    },
+    d(detaching) {
+      if (detaching)
+        detach(t);
+    }
+  };
+}
 function create_default_slot_2(ctx) {
   let strong;
   let h2;
-  let t0_value = ctx[12].title + "";
+  let t0_value = ctx[19].title + "";
   let t0;
   let t1;
   let br0;
@@ -1393,29 +1729,60 @@ function create_default_slot_2(ctx) {
   let t4;
   let h6;
   let t5;
-  let t6_value = ctx[12].createdAt + "";
+  let t6_value = ctx[19].createdAt + "";
   let t6;
   let t7;
   let br2;
   let t8;
-  let t9_value = ctx[12].user + "";
+  let t9_value = ctx[19].user + "";
   let t9;
   let t10;
   let br3;
   let br4;
   let t11;
-  let t12_value = ctx[12].likes + "";
+  let t12_value = ctx[19].likes + "";
   let t12;
+  let t13;
+  let button0;
+  let t14;
+  let button1;
   let current;
   function viewer_value_binding(value) {
-    ctx[8](value, ctx[12]);
+    ctx[11](value, ctx[19]);
   }
   let viewer_props = {};
-  if (ctx[12].post !== void 0) {
-    viewer_props.value = ctx[12].post;
+  if (ctx[19].post !== void 0) {
+    viewer_props.value = ctx[19].post;
   }
   viewer = new Viewer({ props: viewer_props });
   binding_callbacks.push(() => bind(viewer, "value", viewer_value_binding));
+  function click_handler_1() {
+    return ctx[12](ctx[19]);
+  }
+  button0 = new Button({
+    props: {
+      size: "field",
+      type: "tertiary",
+      icon: Edit,
+      $$slots: { default: [create_default_slot_4] },
+      $$scope: { ctx }
+    }
+  });
+  button0.$on("click", click_handler_1);
+  function click_handler_2() {
+    return ctx[13](ctx[19]);
+  }
+  button1 = new Button({
+    props: {
+      size: "field",
+      type: "tertiary",
+      tooltipAlignment: "end",
+      icon: TrashCan,
+      $$slots: { default: [create_default_slot_3] },
+      $$scope: { ctx }
+    }
+  });
+  button1.$on("click", click_handler_2);
   return {
     c() {
       strong = element("strong");
@@ -1440,6 +1807,10 @@ function create_default_slot_2(ctx) {
       br4 = element("br");
       t11 = text("\n        Likes: ");
       t12 = text(t12_value);
+      t13 = space();
+      create_component(button0.$$.fragment);
+      t14 = space();
+      create_component(button1.$$.fragment);
     },
     l(nodes) {
       strong = claim_element(nodes, "STRONG", {});
@@ -1470,6 +1841,10 @@ function create_default_slot_2(ctx) {
       br4 = claim_element(nodes, "BR", {});
       t11 = claim_text(nodes, "\n        Likes: ");
       t12 = claim_text(nodes, t12_value);
+      t13 = claim_space(nodes);
+      claim_component(button0.$$.fragment, nodes);
+      t14 = claim_space(nodes);
+      claim_component(button1.$$.fragment, nodes);
     },
     m(target, anchor) {
       insert_hydration(target, strong, anchor);
@@ -1494,34 +1869,52 @@ function create_default_slot_2(ctx) {
       insert_hydration(target, br4, anchor);
       insert_hydration(target, t11, anchor);
       insert_hydration(target, t12, anchor);
+      insert_hydration(target, t13, anchor);
+      mount_component(button0, target, anchor);
+      insert_hydration(target, t14, anchor);
+      mount_component(button1, target, anchor);
       current = true;
     },
     p(new_ctx, dirty) {
       ctx = new_ctx;
-      if ((!current || dirty & 8) && t0_value !== (t0_value = ctx[12].title + ""))
+      if ((!current || dirty & 16) && t0_value !== (t0_value = ctx[19].title + ""))
         set_data(t0, t0_value);
       const viewer_changes = {};
-      if (!updating_value && dirty & 8) {
+      if (!updating_value && dirty & 16) {
         updating_value = true;
-        viewer_changes.value = ctx[12].post;
+        viewer_changes.value = ctx[19].post;
         add_flush_callback(() => updating_value = false);
       }
       viewer.$set(viewer_changes);
-      if ((!current || dirty & 8) && t6_value !== (t6_value = ctx[12].createdAt + ""))
+      if ((!current || dirty & 16) && t6_value !== (t6_value = ctx[19].createdAt + ""))
         set_data(t6, t6_value);
-      if ((!current || dirty & 8) && t9_value !== (t9_value = ctx[12].user + ""))
+      if ((!current || dirty & 16) && t9_value !== (t9_value = ctx[19].user + ""))
         set_data(t9, t9_value);
-      if ((!current || dirty & 8) && t12_value !== (t12_value = ctx[12].likes + ""))
+      if ((!current || dirty & 16) && t12_value !== (t12_value = ctx[19].likes + ""))
         set_data(t12, t12_value);
+      const button0_changes = {};
+      if (dirty & 33554432) {
+        button0_changes.$$scope = { dirty, ctx };
+      }
+      button0.$set(button0_changes);
+      const button1_changes = {};
+      if (dirty & 33554432) {
+        button1_changes.$$scope = { dirty, ctx };
+      }
+      button1.$set(button1_changes);
     },
     i(local) {
       if (current)
         return;
       transition_in(viewer.$$.fragment, local);
+      transition_in(button0.$$.fragment, local);
+      transition_in(button1.$$.fragment, local);
       current = true;
     },
     o(local) {
       transition_out(viewer.$$.fragment, local);
+      transition_out(button0.$$.fragment, local);
+      transition_out(button1.$$.fragment, local);
       current = false;
     },
     d(detaching) {
@@ -1560,6 +1953,12 @@ function create_default_slot_2(ctx) {
         detach(t11);
       if (detaching)
         detach(t12);
+      if (detaching)
+        detach(t13);
+      destroy_component(button0, detaching);
+      if (detaching)
+        detach(t14);
+      destroy_component(button1, detaching);
     }
   };
 }
@@ -1585,7 +1984,7 @@ function create_if_block(ctx) {
     },
     p(ctx2, dirty) {
       const comment_changes = {};
-      if (dirty & 262148) {
+      if (dirty & 33554440) {
         comment_changes.$$scope = { dirty, ctx: ctx2 };
       }
       comment.$set(comment_changes);
@@ -1606,19 +2005,19 @@ function create_if_block(ctx) {
   };
 }
 function create_default_slot_1(ctx) {
-  let t0_value = ctx[15].user_commented + "";
+  let t0_value = ctx[22].user_commented + "";
   let t0;
   let t1;
   let br0;
   let br1;
   let t2;
-  let t3_value = ctx[15].comment + "";
+  let t3_value = ctx[22].comment + "";
   let t3;
   let t4;
   let br2;
   let br3;
   let t5;
-  let t6_value = ctx[15].createdAt.toLocaleString() + "";
+  let t6_value = ctx[22].createdAt.toLocaleString() + "";
   let t6;
   let t7;
   let br4;
@@ -1685,11 +2084,11 @@ function create_default_slot_1(ctx) {
       insert_hydration(target, br8, anchor);
     },
     p(ctx2, dirty) {
-      if (dirty & 4 && t0_value !== (t0_value = ctx2[15].user_commented + ""))
+      if (dirty & 8 && t0_value !== (t0_value = ctx2[22].user_commented + ""))
         set_data(t0, t0_value);
-      if (dirty & 4 && t3_value !== (t3_value = ctx2[15].comment + ""))
+      if (dirty & 8 && t3_value !== (t3_value = ctx2[22].comment + ""))
         set_data(t3, t3_value);
-      if (dirty & 4 && t6_value !== (t6_value = ctx2[15].createdAt.toLocaleString() + ""))
+      if (dirty & 8 && t6_value !== (t6_value = ctx2[22].createdAt.toLocaleString() + ""))
         set_data(t6, t6_value);
     },
     d(detaching) {
@@ -1733,7 +2132,7 @@ function create_default_slot_1(ctx) {
 function create_each_block_1(ctx) {
   let if_block_anchor;
   let current;
-  let if_block = ctx[15].post_id == ctx[12].id && create_if_block(ctx);
+  let if_block = ctx[22].post_id == ctx[19].id && create_if_block(ctx);
   return {
     c() {
       if (if_block)
@@ -1752,10 +2151,10 @@ function create_each_block_1(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      if (ctx2[15].post_id == ctx2[12].id) {
+      if (ctx2[22].post_id == ctx2[19].id) {
         if (if_block) {
           if_block.p(ctx2, dirty);
-          if (dirty & 12) {
+          if (dirty & 24) {
             transition_in(if_block, 1);
           }
         } else {
@@ -1811,7 +2210,7 @@ function create_each_block(ctx) {
       $$scope: { ctx }
     }
   });
-  let each_value_1 = ctx[2];
+  let each_value_1 = ctx[3];
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
     each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
@@ -1877,12 +2276,12 @@ function create_each_block(ctx) {
     },
     p(ctx2, dirty) {
       const post_changes = {};
-      if (dirty & 262152) {
+      if (dirty & 33554448) {
         post_changes.$$scope = { dirty, ctx: ctx2 };
       }
       post.$set(post_changes);
-      if (dirty & 12) {
-        each_value_1 = ctx2[2];
+      if (dirty & 24) {
+        each_value_1 = ctx2[3];
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
           const child_ctx = get_each_context_1(ctx2, each_value_1, i);
@@ -1955,11 +2354,11 @@ function create_default_slot(ctx) {
   let updating_newPost;
   let current;
   function createpost_newPost_binding(value) {
-    ctx[9](value);
+    ctx[14](value);
   }
   let createpost_props = {};
-  if (ctx[1] !== void 0) {
-    createpost_props.newPost = ctx[1];
+  if (ctx[2] !== void 0) {
+    createpost_props.newPost = ctx[2];
   }
   createpost = new Createpost({ props: createpost_props });
   binding_callbacks.push(() => bind(createpost, "newPost", createpost_newPost_binding));
@@ -1976,9 +2375,9 @@ function create_default_slot(ctx) {
     },
     p(ctx2, dirty) {
       const createpost_changes = {};
-      if (!updating_newPost && dirty & 2) {
+      if (!updating_newPost && dirty & 4) {
         updating_newPost = true;
-        createpost_changes.newPost = ctx2[1];
+        createpost_changes.newPost = ctx2[2];
         add_flush_callback(() => updating_newPost = false);
       }
       createpost.$set(createpost_changes);
@@ -2014,12 +2413,12 @@ function create_fragment(ctx) {
   button = new Button({
     props: {
       kind: "tertiary",
-      $$slots: { default: [create_default_slot_3] },
+      $$slots: { default: [create_default_slot_5] },
       $$scope: { ctx }
     }
   });
-  button.$on("click", ctx[7]);
-  let each_value = ctx[3];
+  button.$on("click", ctx[10]);
+  let each_value = ctx[4];
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
     each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
@@ -2028,15 +2427,14 @@ function create_fragment(ctx) {
     each_blocks[i] = null;
   });
   function modal_open_binding(value) {
-    ctx[10](value);
+    ctx[15](value);
   }
   let modal_props = {
     size: "lg",
     preventCloseOnClickOutside: true,
-    modalHeading: "Add Post",
+    modalHeading: ctx[1] ? "Edit Post" : "Add Post",
     primaryButtonText: "Submit",
     secondaryButtonText: "Cancel",
-    shouldSubmitOnEnter: false,
     $$slots: { default: [create_default_slot] },
     $$scope: { ctx }
   };
@@ -2045,7 +2443,9 @@ function create_fragment(ctx) {
   }
   modal = new Modal({ props: modal_props });
   binding_callbacks.push(() => bind(modal, "open", modal_open_binding));
-  modal.$on("submit", ctx[4]);
+  modal.$on("submit", ctx[5]);
+  modal.$on("shouldSubmitOnEnter", false);
+  modal.$on("click:button--secondary", ctx[16]);
   return {
     c() {
       br0 = element("br");
@@ -2095,12 +2495,12 @@ function create_fragment(ctx) {
     },
     p(ctx2, [dirty]) {
       const button_changes = {};
-      if (dirty & 262144) {
+      if (dirty & 33554432) {
         button_changes.$$scope = { dirty, ctx: ctx2 };
       }
       button.$set(button_changes);
-      if (dirty & 12) {
-        each_value = ctx2[3];
+      if (dirty & 216) {
+        each_value = ctx2[4];
         let i;
         for (i = 0; i < each_value.length; i += 1) {
           const child_ctx = get_each_context(ctx2, each_value, i);
@@ -2121,7 +2521,9 @@ function create_fragment(ctx) {
         check_outros();
       }
       const modal_changes = {};
-      if (dirty & 262146) {
+      if (dirty & 2)
+        modal_changes.modalHeading = ctx2[1] ? "Edit Post" : "Add Post";
+      if (dirty & 33554436) {
         modal_changes.$$scope = { dirty, ctx: ctx2 };
       }
       if (!updating_open && dirty & 1) {
@@ -2176,55 +2578,78 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
   let posts;
   let post_comments;
-  let $comments;
   let $user;
+  let $comments;
   let $blogs;
-  component_subscribe($$self, comments, ($$value) => $$invalidate(5, $comments = $$value));
-  component_subscribe($$self, user, ($$value) => $$invalidate(11, $user = $$value));
-  component_subscribe($$self, blogs, ($$value) => $$invalidate(6, $blogs = $$value));
+  component_subscribe($$self, user, ($$value) => $$invalidate(18, $user = $$value));
+  component_subscribe($$self, comments, ($$value) => $$invalidate(8, $comments = $$value));
+  component_subscribe($$self, blogs, ($$value) => $$invalidate(9, $blogs = $$value));
   fetchBlogs($user.name);
+  Parse.initialize("AfiNKnlsASUOpcnt89tlHQ37vk9itLIBPhwq8arA", "RCLHA2TyiYdaHiDUcNGkHSwdo46xiohqc3igFZaJ");
+  Parse.serverURL = "https://parseapi.back4app.com/";
   let open = false;
+  let edit = false;
   let newPost = { post: "", title: "" };
+  let currentObject = void 0;
   async function upload() {
     let createdAt = new Date().toLocaleString();
-    Parse.initialize("AfiNKnlsASUOpcnt89tlHQ37vk9itLIBPhwq8arA", "RCLHA2TyiYdaHiDUcNGkHSwdo46xiohqc3igFZaJ");
-    Parse.serverURL = "https://parseapi.back4app.com/";
-    const blog = new Parse.Object("blog");
-    blog.set("createdAt", createdAt);
-    blog.set("email", $user.email);
+    let blog;
+    if (currentObject) {
+      blog = currentObject;
+      currentObject = void 0;
+    } else {
+      blog = new Parse.Object("blog");
+      blog.set("createdAt", createdAt);
+      blog.set("email", $user.email);
+      blog.set("user", $user.name);
+      blog.set("users_liked", []);
+      blog.set("likes", 0);
+    }
     blog.set("title", newPost.title);
     blog.set("post", newPost.post);
-    blog.set("user", $user.name);
-    blog.set("users_liked", []);
-    blog.set("likes", 0);
     try {
       const result = await blog.save();
     } catch (error) {
       alert("Failed to create new object: " + error.message);
     }
-    $$invalidate(1, newPost.title = "", newPost);
-    $$invalidate(1, newPost.post = "", newPost);
+    $$invalidate(2, newPost.title = "", newPost);
+    $$invalidate(2, newPost.post = "", newPost);
     $$invalidate(0, open = false);
+    $$invalidate(1, edit = false);
+    fetchBlogs($user.name);
+  }
+  function edit_post(post) {
+    $$invalidate(0, open = true);
+    $$invalidate(1, edit = true);
+    $$invalidate(2, newPost.title = post.title, newPost);
+    $$invalidate(2, newPost.post = post.post, newPost);
+    currentObject = post.object;
+  }
+  function delete_post(post) {
+    post.object.destroy();
     fetchBlogs($user.name);
   }
   const click_handler = () => $$invalidate(0, open = true);
   function viewer_value_binding(value, post) {
     if ($$self.$$.not_equal(post.post, value)) {
       post.post = value;
-      $$invalidate(3, posts), $$invalidate(6, $blogs);
+      $$invalidate(4, posts), $$invalidate(9, $blogs);
     }
   }
+  const click_handler_1 = (post) => edit_post(post);
+  const click_handler_2 = (post) => delete_post(post);
   function createpost_newPost_binding(value) {
     newPost = value;
-    $$invalidate(1, newPost);
+    $$invalidate(2, newPost);
   }
   function modal_open_binding(value) {
     open = value;
     $$invalidate(0, open);
   }
+  const click_button_secondary_handler = () => $$invalidate(0, open = false);
   $$self.$$.update = () => {
-    if ($$self.$$.dirty & 64) {
-      $$invalidate(3, posts = $blogs.map((entry) => {
+    if ($$self.$$.dirty & 512) {
+      $$invalidate(4, posts = $blogs.map((entry) => {
         let id = entry["id"];
         let title = entry.title;
         let post = entry.post;
@@ -2238,6 +2663,7 @@ function instance($$self, $$props, $$invalidate) {
           title,
           post,
           likes,
+          object: entry.object,
           users_liked,
           user: user2,
           email,
@@ -2245,8 +2671,8 @@ function instance($$self, $$props, $$invalidate) {
         };
       }));
     }
-    if ($$self.$$.dirty & 32) {
-      $$invalidate(2, post_comments = $comments.map((entry) => {
+    if ($$self.$$.dirty & 256) {
+      $$invalidate(3, post_comments = $comments.map((entry) => {
         let post_id = entry["post_id"];
         let comment = entry.comment;
         let user_commented = entry.user_commented;
@@ -2264,16 +2690,22 @@ function instance($$self, $$props, $$invalidate) {
   };
   return [
     open,
+    edit,
     newPost,
     post_comments,
     posts,
     upload,
+    edit_post,
+    delete_post,
     $comments,
     $blogs,
     click_handler,
     viewer_value_binding,
+    click_handler_1,
+    click_handler_2,
     createpost_newPost_binding,
-    modal_open_binding
+    modal_open_binding,
+    click_button_secondary_handler
   ];
 }
 class Myblog extends SvelteComponent {

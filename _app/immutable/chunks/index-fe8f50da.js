@@ -747,78 +747,7 @@ function create_bidirectional_transition(node, fn, params, intro) {
     }
   };
 }
-function outro_and_destroy_block(block, lookup) {
-  transition_out(block, 1, 1, () => {
-    lookup.delete(block.key);
-  });
-}
-function update_keyed_each(old_blocks, dirty, get_key, dynamic, ctx, list, lookup, node, destroy, create_each_block, next, get_context) {
-  let o = old_blocks.length;
-  let n = list.length;
-  let i = o;
-  const old_indexes = {};
-  while (i--)
-    old_indexes[old_blocks[i].key] = i;
-  const new_blocks = [];
-  const new_lookup = /* @__PURE__ */ new Map();
-  const deltas = /* @__PURE__ */ new Map();
-  i = n;
-  while (i--) {
-    const child_ctx = get_context(ctx, list, i);
-    const key = get_key(child_ctx);
-    let block = lookup.get(key);
-    if (!block) {
-      block = create_each_block(key, child_ctx);
-      block.c();
-    } else if (dynamic) {
-      block.p(child_ctx, dirty);
-    }
-    new_lookup.set(key, new_blocks[i] = block);
-    if (key in old_indexes)
-      deltas.set(key, Math.abs(i - old_indexes[key]));
-  }
-  const will_move = /* @__PURE__ */ new Set();
-  const did_move = /* @__PURE__ */ new Set();
-  function insert(block) {
-    transition_in(block, 1);
-    block.m(node, next);
-    lookup.set(block.key, block);
-    next = block.first;
-    n--;
-  }
-  while (o && n) {
-    const new_block = new_blocks[n - 1];
-    const old_block = old_blocks[o - 1];
-    const new_key = new_block.key;
-    const old_key = old_block.key;
-    if (new_block === old_block) {
-      next = new_block.first;
-      o--;
-      n--;
-    } else if (!new_lookup.has(old_key)) {
-      destroy(old_block, lookup);
-      o--;
-    } else if (!lookup.has(new_key) || will_move.has(new_key)) {
-      insert(new_block);
-    } else if (did_move.has(old_key)) {
-      o--;
-    } else if (deltas.get(new_key) > deltas.get(old_key)) {
-      did_move.add(new_key);
-      insert(new_block);
-    } else {
-      will_move.add(old_key);
-      o--;
-    }
-  }
-  while (o--) {
-    const old_block = old_blocks[o];
-    if (!new_lookup.has(old_block.key))
-      destroy(old_block, lookup);
-  }
-  while (n)
-    insert(new_blocks[n - 1]);
-  return new_blocks;
-}
+const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : global;
 function get_spread_update(levels, updates) {
   const update2 = {};
   const to_null_out = {};
@@ -976,4 +905,4 @@ class SvelteComponent {
     }
   }
 }
-export { bind as $, get_spread_object as A, destroy_component as B, assign as C, tick as D, noop as E, compute_rest_props as F, compute_slots as G, exclude_internal_props as H, bubble as I, binding_callbacks as J, create_slot as K, toggle_class as L, update_slot_base as M, get_all_dirty_from_scope as N, get_slot_changes as O, set_attributes as P, append_hydration as Q, listen as R, SvelteComponent as S, run_all as T, svg_element as U, claim_svg_element as V, set_svg_attributes as W, createEventDispatcher as X, component_subscribe as Y, getContext as Z, add_flush_callback as _, children as a, update_keyed_each as a0, outro_and_destroy_block as a1, add_render_callback as a2, create_bidirectional_transition as a3, stop_propagation as a4, query_selector_all as a5, src_url_equal as a6, set_store_value as a7, get_store_value as a8, not_equal as a9, destroy_each as aa, onDestroy as ab, set_input_value as ac, attr as b, claim_element as c, detach as d, element as e, set_style as f, insert_hydration as g, claim_text as h, init as i, set_data as j, space as k, empty as l, claim_space as m, group_outros as n, transition_out as o, check_outros as p, transition_in as q, setContext as r, safe_not_equal as s, text as t, afterUpdate as u, onMount as v, create_component as w, claim_component as x, mount_component as y, get_spread_update as z };
+export { create_bidirectional_transition as $, get_spread_object as A, destroy_component as B, assign as C, tick as D, noop as E, compute_rest_props as F, compute_slots as G, exclude_internal_props as H, bubble as I, binding_callbacks as J, create_slot as K, toggle_class as L, update_slot_base as M, get_all_dirty_from_scope as N, get_slot_changes as O, set_attributes as P, append_hydration as Q, listen as R, SvelteComponent as S, run_all as T, svg_element as U, claim_svg_element as V, set_svg_attributes as W, add_render_callback as X, add_flush_callback as Y, component_subscribe as Z, bind as _, children as a, stop_propagation as a0, createEventDispatcher as a1, getContext as a2, query_selector_all as a3, src_url_equal as a4, globals as a5, set_store_value as a6, get_store_value as a7, not_equal as a8, destroy_each as a9, onDestroy as aa, set_input_value as ab, attr as b, claim_element as c, detach as d, element as e, set_style as f, insert_hydration as g, claim_text as h, init as i, set_data as j, space as k, empty as l, claim_space as m, group_outros as n, transition_out as o, check_outros as p, transition_in as q, setContext as r, safe_not_equal as s, text as t, afterUpdate as u, onMount as v, create_component as w, claim_component as x, mount_component as y, get_spread_update as z };
