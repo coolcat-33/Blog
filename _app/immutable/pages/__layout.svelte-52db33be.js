@@ -18,8 +18,8 @@ var __spreadValues = (a, b) => {
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 import { S as SvelteComponent, i as init, s as safe_not_equal, l as empty, g as insert_hydration, n as group_outros, o as transition_out, p as check_outros, q as transition_in, d as detach, F as compute_rest_props, G as compute_slots, C as assign, H as exclude_internal_props, I as bubble, J as binding_callbacks, K as create_slot, e as element, c as claim_element, a as children, L as toggle_class, M as update_slot_base, N as get_all_dirty_from_scope, O as get_slot_changes, k as space, m as claim_space, P as set_attributes, Q as append_hydration, R as listen, z as get_spread_update, T as run_all, w as create_component, x as claim_component, y as mount_component, B as destroy_component, U as svg_element, t as text, V as claim_svg_element, h as claim_text, j as set_data, b as attr, W as set_svg_attributes, E as noop, X as add_render_callback, Y as add_flush_callback, Z as component_subscribe, _ as bind, $ as create_bidirectional_transition, a0 as stop_propagation, a1 as createEventDispatcher, a2 as getContext, v as onMount, a3 as query_selector_all, a4 as src_url_equal, a5 as set_store_value } from "../chunks/index-f6cf4e8a.js";
-import { u as user, B as Button } from "../chunks/HeaderSearch.svelte_svelte_type_style_lang-6bc14e48.js";
-import { C as Close } from "../chunks/Close-bf4cda3e.js";
+import { C as Close, u as user, B as Button } from "../chunks/Close-bd2cc31f.js";
+import "../chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js";
 import { w as writable } from "../chunks/index-d888c928.js";
 import { c as client } from "../chunks/singletons-d1fb5791.js";
 const get_icon_slot_changes_1 = (dirty) => ({});
@@ -4025,8 +4025,10 @@ const page = {
 };
 function create_default_slot_13(ctx) {
   let headernavitem0;
-  let t;
+  let t0;
   let headernavitem1;
+  let t1;
+  let headernavitem2;
   let current;
   headernavitem0 = new HeaderNavItem({
     props: {
@@ -4042,21 +4044,34 @@ function create_default_slot_13(ctx) {
       text: "Other Blogs"
     }
   });
+  headernavitem2 = new HeaderNavItem({
+    props: {
+      isSelected: ctx[2] === "/blog/help",
+      href: "help",
+      text: "Need Help?"
+    }
+  });
   return {
     c() {
       create_component(headernavitem0.$$.fragment);
-      t = space();
+      t0 = space();
       create_component(headernavitem1.$$.fragment);
+      t1 = space();
+      create_component(headernavitem2.$$.fragment);
     },
     l(nodes) {
       claim_component(headernavitem0.$$.fragment, nodes);
-      t = claim_space(nodes);
+      t0 = claim_space(nodes);
       claim_component(headernavitem1.$$.fragment, nodes);
+      t1 = claim_space(nodes);
+      claim_component(headernavitem2.$$.fragment, nodes);
     },
     m(target, anchor) {
       mount_component(headernavitem0, target, anchor);
-      insert_hydration(target, t, anchor);
+      insert_hydration(target, t0, anchor);
       mount_component(headernavitem1, target, anchor);
+      insert_hydration(target, t1, anchor);
+      mount_component(headernavitem2, target, anchor);
       current = true;
     },
     p(ctx2, dirty) {
@@ -4068,24 +4083,33 @@ function create_default_slot_13(ctx) {
       if (dirty & 4)
         headernavitem1_changes.isSelected = ctx2[2] === "/blog/otherblog";
       headernavitem1.$set(headernavitem1_changes);
+      const headernavitem2_changes = {};
+      if (dirty & 4)
+        headernavitem2_changes.isSelected = ctx2[2] === "/blog/help";
+      headernavitem2.$set(headernavitem2_changes);
     },
     i(local) {
       if (current)
         return;
       transition_in(headernavitem0.$$.fragment, local);
       transition_in(headernavitem1.$$.fragment, local);
+      transition_in(headernavitem2.$$.fragment, local);
       current = true;
     },
     o(local) {
       transition_out(headernavitem0.$$.fragment, local);
       transition_out(headernavitem1.$$.fragment, local);
+      transition_out(headernavitem2.$$.fragment, local);
       current = false;
     },
     d(detaching) {
       destroy_component(headernavitem0, detaching);
       if (detaching)
-        detach(t);
+        detach(t0);
       destroy_component(headernavitem1, detaching);
+      if (detaching)
+        detach(t1);
+      destroy_component(headernavitem2, detaching);
     }
   };
 }
@@ -4526,6 +4550,8 @@ function create_default_slot_3(ctx) {
   let sidenavmenuitem2;
   let t2;
   let sidenavmenuitem3;
+  let t3;
+  let sidenavmenuitem4;
   let current;
   sidenavmenuitem0 = new SideNavMenuItem({
     props: { href: "myblog", text: "My Blog" }
@@ -4540,6 +4566,9 @@ function create_default_slot_3(ctx) {
     }
   });
   sidenavmenuitem3 = new SideNavMenuItem({
+    props: { href: "help", text: "Need Help?" }
+  });
+  sidenavmenuitem4 = new SideNavMenuItem({
     props: {
       $$slots: { default: [create_default_slot_4] },
       $$scope: { ctx }
@@ -4554,6 +4583,8 @@ function create_default_slot_3(ctx) {
       create_component(sidenavmenuitem2.$$.fragment);
       t2 = space();
       create_component(sidenavmenuitem3.$$.fragment);
+      t3 = space();
+      create_component(sidenavmenuitem4.$$.fragment);
     },
     l(nodes) {
       claim_component(sidenavmenuitem0.$$.fragment, nodes);
@@ -4563,6 +4594,8 @@ function create_default_slot_3(ctx) {
       claim_component(sidenavmenuitem2.$$.fragment, nodes);
       t2 = claim_space(nodes);
       claim_component(sidenavmenuitem3.$$.fragment, nodes);
+      t3 = claim_space(nodes);
+      claim_component(sidenavmenuitem4.$$.fragment, nodes);
     },
     m(target, anchor) {
       mount_component(sidenavmenuitem0, target, anchor);
@@ -4572,14 +4605,16 @@ function create_default_slot_3(ctx) {
       mount_component(sidenavmenuitem2, target, anchor);
       insert_hydration(target, t2, anchor);
       mount_component(sidenavmenuitem3, target, anchor);
+      insert_hydration(target, t3, anchor);
+      mount_component(sidenavmenuitem4, target, anchor);
       current = true;
     },
     p(ctx2, dirty) {
-      const sidenavmenuitem3_changes = {};
+      const sidenavmenuitem4_changes = {};
       if (dirty & 1024) {
-        sidenavmenuitem3_changes.$$scope = { dirty, ctx: ctx2 };
+        sidenavmenuitem4_changes.$$scope = { dirty, ctx: ctx2 };
       }
-      sidenavmenuitem3.$set(sidenavmenuitem3_changes);
+      sidenavmenuitem4.$set(sidenavmenuitem4_changes);
     },
     i(local) {
       if (current)
@@ -4588,6 +4623,7 @@ function create_default_slot_3(ctx) {
       transition_in(sidenavmenuitem1.$$.fragment, local);
       transition_in(sidenavmenuitem2.$$.fragment, local);
       transition_in(sidenavmenuitem3.$$.fragment, local);
+      transition_in(sidenavmenuitem4.$$.fragment, local);
       current = true;
     },
     o(local) {
@@ -4595,6 +4631,7 @@ function create_default_slot_3(ctx) {
       transition_out(sidenavmenuitem1.$$.fragment, local);
       transition_out(sidenavmenuitem2.$$.fragment, local);
       transition_out(sidenavmenuitem3.$$.fragment, local);
+      transition_out(sidenavmenuitem4.$$.fragment, local);
       current = false;
     },
     d(detaching) {
@@ -4608,6 +4645,9 @@ function create_default_slot_3(ctx) {
       if (detaching)
         detach(t2);
       destroy_component(sidenavmenuitem3, detaching);
+      if (detaching)
+        detach(t3);
+      destroy_component(sidenavmenuitem4, detaching);
     }
   };
 }

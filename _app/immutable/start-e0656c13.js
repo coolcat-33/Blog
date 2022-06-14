@@ -773,18 +773,20 @@ const __vitePreload = function preload(baseModule, deps) {
 };
 const matchers = {};
 const components = [
-  () => __vitePreload(() => import("./pages/__layout.svelte-df3dd8a9.js"), true ? ["pages/__layout.svelte-df3dd8a9.js","chunks/index-f6cf4e8a.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-6bc14e48.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/index-d888c928.js","chunks/Close-bf4cda3e.js","chunks/singletons-d1fb5791.js"] : void 0),
+  () => __vitePreload(() => import("./pages/__layout.svelte-52db33be.js"), true ? ["pages/__layout.svelte-52db33be.js","chunks/index-f6cf4e8a.js","chunks/Close-bd2cc31f.js","chunks/index-d888c928.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/singletons-d1fb5791.js"] : void 0),
   () => __vitePreload(() => import("./error.svelte-5a8f10c3.js"), true ? ["error.svelte-5a8f10c3.js","chunks/index-f6cf4e8a.js"] : void 0),
-  () => __vitePreload(() => import("./pages/createpost.svelte-6c0d9917.js"), true ? ["pages/createpost.svelte-6c0d9917.js","chunks/index-f6cf4e8a.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-6bc14e48.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/index-d888c928.js","chunks/TextInput-db138907.js","chunks/createpost-bfeb1fa1.js","assets/createpost-93f41a65.css"] : void 0),
+  () => __vitePreload(() => import("./pages/createpost.svelte-de6a61ad.js"), true ? ["pages/createpost.svelte-de6a61ad.js","assets/pages/createpost.svelte-d41af497.css","chunks/index-f6cf4e8a.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/index-d888c928.js","chunks/viewer-f34691b1.js"] : void 0),
+  () => __vitePreload(() => import("./pages/help.svelte-11982e1e.js"), true ? ["pages/help.svelte-11982e1e.js","chunks/index-f6cf4e8a.js"] : void 0),
   () => __vitePreload(() => import("./pages/index.svelte-140b4665.js"), true ? ["pages/index.svelte-140b4665.js","chunks/index-f6cf4e8a.js"] : void 0),
-  () => __vitePreload(() => import("./pages/myblog.svelte-09cc8fb0.js"), true ? ["pages/myblog.svelte-09cc8fb0.js","chunks/index-f6cf4e8a.js","chunks/Post-80c6c73a.js","assets/Post-29c31e56.css","chunks/index-d888c928.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-6bc14e48.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/Close-bf4cda3e.js","chunks/createpost-bfeb1fa1.js","assets/createpost-93f41a65.css","chunks/TextInput-db138907.js"] : void 0),
-  () => __vitePreload(() => import("./pages/otherblog.svelte-1b05e7b4.js"), true ? ["pages/otherblog.svelte-1b05e7b4.js","chunks/index-f6cf4e8a.js","chunks/Post-80c6c73a.js","assets/Post-29c31e56.css","chunks/index-d888c928.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-6bc14e48.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/Close-bf4cda3e.js","chunks/TextInput-db138907.js"] : void 0)
+  () => __vitePreload(() => import("./pages/myblog.svelte-6d5658ce.js"), true ? ["pages/myblog.svelte-6d5658ce.js","chunks/index-f6cf4e8a.js","chunks/Post-80c6c73a.js","assets/Post-29c31e56.css","chunks/index-d888c928.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/Close-bd2cc31f.js","pages/createpost.svelte-de6a61ad.js","assets/pages/createpost.svelte-d41af497.css","chunks/viewer-f34691b1.js"] : void 0),
+  () => __vitePreload(() => import("./pages/otherblog.svelte-ac2a1bac.js"), true ? ["pages/otherblog.svelte-ac2a1bac.js","chunks/index-f6cf4e8a.js","chunks/Post-80c6c73a.js","assets/Post-29c31e56.css","chunks/index-d888c928.js","chunks/viewer-f34691b1.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/Close-bd2cc31f.js"] : void 0)
 ];
 const dictionary = {
-  "": [[0, 3], [1]],
+  "": [[0, 4], [1]],
   "createpost": [[0, 2], [1]],
-  "myblog": [[0, 4], [1]],
-  "otherblog": [[0, 5], [1]]
+  "help": [[0, 3], [1]],
+  "myblog": [[0, 5], [1]],
+  "otherblog": [[0, 6], [1]]
 };
 function coalesce_to_error(err) {
   return err instanceof Error || err && err.name && err.message ? err : new Error(JSON.stringify(err));
@@ -887,7 +889,7 @@ function notifiable_store(value) {
 }
 function create_updated_store() {
   const { set, subscribe } = writable(false);
-  const initial = "1655179044176";
+  const initial = "1655187620389";
   let timeout;
   async function check() {
     clearTimeout(timeout);

@@ -1,9 +1,9 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, U as svg_element, t as text, V as claim_svg_element, a as children, h as claim_text, d as detach, g as insert_hydration, Q as append_hydration, j as set_data, C as assign, b as attr, W as set_svg_attributes, z as get_spread_update, E as noop, F as compute_rest_props, H as exclude_internal_props, e as element, k as space, c as claim_element, m as claim_space, L as toggle_class, P as set_attributes, R as listen, T as run_all, I as bubble, l as empty, n as group_outros, o as transition_out, p as check_outros, q as transition_in, a1 as createEventDispatcher, J as binding_callbacks, K as create_slot, w as create_component, x as claim_component, y as mount_component, aa as set_input_value, B as destroy_component, M as update_slot_base, N as get_all_dirty_from_scope, O as get_slot_changes, A as get_spread_object, _ as bind, Y as add_flush_callback, a8 as destroy_each, Z as component_subscribe } from "../chunks/index-f6cf4e8a.js";
 import { f as fetchBlogs, P as Post, o as otherBlogs } from "../chunks/Post-80c6c73a.js";
 import { w as writable } from "../chunks/index-d888c928.js";
-import { B as Button, u as user } from "../chunks/HeaderSearch.svelte_svelte_type_style_lang-6bc14e48.js";
-import { C as Close } from "../chunks/Close-bf4cda3e.js";
-import { T as TextInput } from "../chunks/TextInput-db138907.js";
+import { T as TextInput, V as Viewer } from "../chunks/viewer-f34691b1.js";
+import "../chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js";
+import { C as Close, B as Button, u as user } from "../chunks/Close-bd2cc31f.js";
 function create_if_block$4(ctx) {
   let title_1;
   let t;
@@ -1329,14 +1329,14 @@ class FavoriteFilled extends SvelteComponent {
 }
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[15] = list[i];
-  child_ctx[16] = list;
-  child_ctx[17] = i;
+  child_ctx[16] = list[i];
+  child_ctx[17] = list;
+  child_ctx[18] = i;
   return child_ctx;
 }
 function get_each_context_1(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[18] = list[i];
+  child_ctx[19] = list[i];
   return child_ctx;
 }
 function create_if_block(ctx) {
@@ -1366,19 +1366,19 @@ function create_if_block(ctx) {
     }
   });
   function textinput_value_binding(value) {
-    ctx[13](value, ctx[17]);
+    ctx[14](value, ctx[18]);
   }
   let textinput_props = {
     size: "lg",
     placeholder: "Comment on this post"
   };
-  if (ctx[0][ctx[17]] !== void 0) {
-    textinput_props.value = ctx[0][ctx[17]];
+  if (ctx[0][ctx[18]] !== void 0) {
+    textinput_props.value = ctx[0][ctx[18]];
   }
   textinput = new TextInput({ props: textinput_props });
   binding_callbacks.push(() => bind(textinput, "value", textinput_value_binding));
   function click_handler_3() {
-    return ctx[14](ctx[15], ctx[17]);
+    return ctx[15](ctx[16], ctx[18]);
   }
   button = new Button({
     props: {
@@ -1388,7 +1388,7 @@ function create_if_block(ctx) {
     }
   });
   button.$on("click", click_handler_3);
-  let each_value_1 = ctx[3];
+  let each_value_1 = ctx[2];
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
     each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
@@ -1467,24 +1467,24 @@ function create_if_block(ctx) {
     p(new_ctx, dirty) {
       ctx = new_ctx;
       const post_changes = {};
-      if (dirty & 2097174) {
+      if (dirty & 4194330) {
         post_changes.$$scope = { dirty, ctx };
       }
       post.$set(post_changes);
       const textinput_changes = {};
       if (!updating_value && dirty & 1) {
         updating_value = true;
-        textinput_changes.value = ctx[0][ctx[17]];
+        textinput_changes.value = ctx[0][ctx[18]];
         add_flush_callback(() => updating_value = false);
       }
       textinput.$set(textinput_changes);
       const button_changes = {};
-      if (dirty & 2097152) {
+      if (dirty & 4194304) {
         button_changes.$$scope = { dirty, ctx };
       }
       button.$set(button_changes);
       if (dirty & 12) {
-        each_value_1 = ctx[3];
+        each_value_1 = ctx[2];
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
           const child_ctx = get_each_context_1(ctx, each_value_1, i);
@@ -1563,7 +1563,7 @@ function create_if_block(ctx) {
   };
 }
 function create_default_slot_3(ctx) {
-  let t_value = ctx[15].user + "";
+  let t_value = ctx[16].user + "";
   let t;
   return {
     c() {
@@ -1576,7 +1576,7 @@ function create_default_slot_3(ctx) {
       insert_hydration(target, t, anchor);
     },
     p(ctx2, dirty) {
-      if (dirty & 4 && t_value !== (t_value = ctx2[15].user + ""))
+      if (dirty & 8 && t_value !== (t_value = ctx2[16].user + ""))
         set_data(t, t_value);
     },
     d(detaching) {
@@ -1589,7 +1589,7 @@ function create_else_block(ctx) {
   let button;
   let current;
   function click_handler_2() {
-    return ctx[12](ctx[15]);
+    return ctx[13](ctx[16]);
   }
   button = new Button({
     props: {
@@ -1632,7 +1632,7 @@ function create_if_block_2(ctx) {
   let button;
   let current;
   function click_handler_1() {
-    return ctx[11](ctx[15]);
+    return ctx[12](ctx[16]);
   }
   button = new Button({
     props: {
@@ -1674,39 +1674,45 @@ function create_if_block_2(ctx) {
 function create_default_slot_2(ctx) {
   let strong;
   let h2;
-  let t0_value = ctx[15].title + "";
+  let t0_value = ctx[16].title + "";
   let t0;
   let t1;
   let br0;
   let t2;
-  let h4;
-  let t3_value = ctx[15].post + "";
+  let viewer;
+  let updating_value;
   let t3;
-  let t4;
   let br1;
-  let t5;
+  let t4;
   let h6;
+  let t5;
+  let t6_value = ctx[16].createdAt + "";
   let t6;
-  let t7_value = ctx[15].createdAt + "";
   let t7;
-  let t8;
   let br2;
-  let t9;
+  let t8;
   let button;
-  let t10;
-  let t11_value = ctx[15].email + "";
-  let t11;
-  let t12;
   let br3;
   let br4;
-  let t13;
+  let t9;
   let show_if;
   let current_block_type_index;
   let if_block;
-  let if_block_anchor;
+  let t10;
+  let t11_value = ctx[16].likes + "";
+  let t11;
   let current;
+  function viewer_value_binding(value) {
+    ctx[10](value, ctx[16]);
+  }
+  let viewer_props = {};
+  if (ctx[16].post !== void 0) {
+    viewer_props.value = ctx[16].post;
+  }
+  viewer = new Viewer({ props: viewer_props });
+  binding_callbacks.push(() => bind(viewer, "value", viewer_value_binding));
   function click_handler() {
-    return ctx[10](ctx[15]);
+    return ctx[11](ctx[16]);
   }
   button = new Button({
     props: {
@@ -1720,10 +1726,10 @@ function create_default_slot_2(ctx) {
   const if_block_creators = [create_if_block_2, create_else_block];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
-    if (dirty & 20)
+    if (dirty & 24)
       show_if = null;
     if (show_if == null)
-      show_if = !!ctx2[15].users_liked.includes(ctx2[4].name);
+      show_if = !!ctx2[16].users_liked.includes(ctx2[4].name);
     if (show_if)
       return 0;
     return 1;
@@ -1738,26 +1744,23 @@ function create_default_slot_2(ctx) {
       t1 = space();
       br0 = element("br");
       t2 = space();
-      h4 = element("h4");
-      t3 = text(t3_value);
-      t4 = space();
+      create_component(viewer.$$.fragment);
+      t3 = space();
       br1 = element("br");
-      t5 = space();
+      t4 = space();
       h6 = element("h6");
-      t6 = text("Posted at: ");
-      t7 = text(t7_value);
-      t8 = space();
+      t5 = text("Posted at: ");
+      t6 = text(t6_value);
+      t7 = space();
       br2 = element("br");
-      t9 = text("\n            Posted by: ");
+      t8 = text("\n            Posted by: ");
       create_component(button.$$.fragment);
-      t10 = text(" (");
-      t11 = text(t11_value);
-      t12 = text(")");
       br3 = element("br");
       br4 = element("br");
-      t13 = space();
+      t9 = space();
       if_block.c();
-      if_block_anchor = empty();
+      t10 = text("\n            Likes: ");
+      t11 = text(t11_value);
     },
     l(nodes) {
       strong = claim_element(nodes, "STRONG", {});
@@ -1770,30 +1773,25 @@ function create_default_slot_2(ctx) {
       t1 = claim_space(nodes);
       br0 = claim_element(nodes, "BR", {});
       t2 = claim_space(nodes);
-      h4 = claim_element(nodes, "H4", {});
-      var h4_nodes = children(h4);
-      t3 = claim_text(h4_nodes, t3_value);
-      h4_nodes.forEach(detach);
-      t4 = claim_space(nodes);
+      claim_component(viewer.$$.fragment, nodes);
+      t3 = claim_space(nodes);
       br1 = claim_element(nodes, "BR", {});
-      t5 = claim_space(nodes);
+      t4 = claim_space(nodes);
       h6 = claim_element(nodes, "H6", {});
       var h6_nodes = children(h6);
-      t6 = claim_text(h6_nodes, "Posted at: ");
-      t7 = claim_text(h6_nodes, t7_value);
+      t5 = claim_text(h6_nodes, "Posted at: ");
+      t6 = claim_text(h6_nodes, t6_value);
       h6_nodes.forEach(detach);
-      t8 = claim_space(nodes);
+      t7 = claim_space(nodes);
       br2 = claim_element(nodes, "BR", {});
-      t9 = claim_text(nodes, "\n            Posted by: ");
+      t8 = claim_text(nodes, "\n            Posted by: ");
       claim_component(button.$$.fragment, nodes);
-      t10 = claim_text(nodes, " (");
-      t11 = claim_text(nodes, t11_value);
-      t12 = claim_text(nodes, ")");
       br3 = claim_element(nodes, "BR", {});
       br4 = claim_element(nodes, "BR", {});
-      t13 = claim_space(nodes);
+      t9 = claim_space(nodes);
       if_block.l(nodes);
-      if_block_anchor = empty();
+      t10 = claim_text(nodes, "\n            Likes: ");
+      t11 = claim_text(nodes, t11_value);
     },
     m(target, anchor) {
       insert_hydration(target, strong, anchor);
@@ -1802,43 +1800,43 @@ function create_default_slot_2(ctx) {
       insert_hydration(target, t1, anchor);
       insert_hydration(target, br0, anchor);
       insert_hydration(target, t2, anchor);
-      insert_hydration(target, h4, anchor);
-      append_hydration(h4, t3);
-      insert_hydration(target, t4, anchor);
+      mount_component(viewer, target, anchor);
+      insert_hydration(target, t3, anchor);
       insert_hydration(target, br1, anchor);
-      insert_hydration(target, t5, anchor);
+      insert_hydration(target, t4, anchor);
       insert_hydration(target, h6, anchor);
+      append_hydration(h6, t5);
       append_hydration(h6, t6);
-      append_hydration(h6, t7);
-      insert_hydration(target, t8, anchor);
+      insert_hydration(target, t7, anchor);
       insert_hydration(target, br2, anchor);
-      insert_hydration(target, t9, anchor);
+      insert_hydration(target, t8, anchor);
       mount_component(button, target, anchor);
-      insert_hydration(target, t10, anchor);
-      insert_hydration(target, t11, anchor);
-      insert_hydration(target, t12, anchor);
       insert_hydration(target, br3, anchor);
       insert_hydration(target, br4, anchor);
-      insert_hydration(target, t13, anchor);
+      insert_hydration(target, t9, anchor);
       if_blocks[current_block_type_index].m(target, anchor);
-      insert_hydration(target, if_block_anchor, anchor);
+      insert_hydration(target, t10, anchor);
+      insert_hydration(target, t11, anchor);
       current = true;
     },
     p(new_ctx, dirty) {
       ctx = new_ctx;
-      if ((!current || dirty & 4) && t0_value !== (t0_value = ctx[15].title + ""))
+      if ((!current || dirty & 8) && t0_value !== (t0_value = ctx[16].title + ""))
         set_data(t0, t0_value);
-      if ((!current || dirty & 4) && t3_value !== (t3_value = ctx[15].post + ""))
-        set_data(t3, t3_value);
-      if ((!current || dirty & 4) && t7_value !== (t7_value = ctx[15].createdAt + ""))
-        set_data(t7, t7_value);
+      const viewer_changes = {};
+      if (!updating_value && dirty & 8) {
+        updating_value = true;
+        viewer_changes.value = ctx[16].post;
+        add_flush_callback(() => updating_value = false);
+      }
+      viewer.$set(viewer_changes);
+      if ((!current || dirty & 8) && t6_value !== (t6_value = ctx[16].createdAt + ""))
+        set_data(t6, t6_value);
       const button_changes = {};
-      if (dirty & 2097156) {
+      if (dirty & 4194312) {
         button_changes.$$scope = { dirty, ctx };
       }
       button.$set(button_changes);
-      if ((!current || dirty & 4) && t11_value !== (t11_value = ctx[15].email + ""))
-        set_data(t11, t11_value);
       let previous_block_index = current_block_type_index;
       current_block_type_index = select_block_type(ctx, dirty);
       if (current_block_type_index === previous_block_index) {
@@ -1857,17 +1855,21 @@ function create_default_slot_2(ctx) {
           if_block.p(ctx, dirty);
         }
         transition_in(if_block, 1);
-        if_block.m(if_block_anchor.parentNode, if_block_anchor);
+        if_block.m(t10.parentNode, t10);
       }
+      if ((!current || dirty & 8) && t11_value !== (t11_value = ctx[16].likes + ""))
+        set_data(t11, t11_value);
     },
     i(local) {
       if (current)
         return;
+      transition_in(viewer.$$.fragment, local);
       transition_in(button.$$.fragment, local);
       transition_in(if_block);
       current = true;
     },
     o(local) {
+      transition_out(viewer.$$.fragment, local);
       transition_out(button.$$.fragment, local);
       transition_out(if_block);
       current = false;
@@ -1881,38 +1883,33 @@ function create_default_slot_2(ctx) {
         detach(br0);
       if (detaching)
         detach(t2);
+      destroy_component(viewer, detaching);
       if (detaching)
-        detach(h4);
-      if (detaching)
-        detach(t4);
+        detach(t3);
       if (detaching)
         detach(br1);
       if (detaching)
-        detach(t5);
+        detach(t4);
       if (detaching)
         detach(h6);
       if (detaching)
-        detach(t8);
+        detach(t7);
       if (detaching)
         detach(br2);
       if (detaching)
-        detach(t9);
+        detach(t8);
       destroy_component(button, detaching);
-      if (detaching)
-        detach(t10);
-      if (detaching)
-        detach(t11);
-      if (detaching)
-        detach(t12);
       if (detaching)
         detach(br3);
       if (detaching)
         detach(br4);
       if (detaching)
-        detach(t13);
+        detach(t9);
       if_blocks[current_block_type_index].d(detaching);
       if (detaching)
-        detach(if_block_anchor);
+        detach(t10);
+      if (detaching)
+        detach(t11);
     }
   };
 }
@@ -1956,7 +1953,7 @@ function create_if_block_1(ctx) {
     },
     p(ctx2, dirty) {
       const comment_changes = {};
-      if (dirty & 2097160) {
+      if (dirty & 4194308) {
         comment_changes.$$scope = { dirty, ctx: ctx2 };
       }
       comment.$set(comment_changes);
@@ -1977,19 +1974,19 @@ function create_if_block_1(ctx) {
   };
 }
 function create_default_slot(ctx) {
-  let t0_value = ctx[18].user_commented + "";
+  let t0_value = ctx[19].user_commented + "";
   let t0;
   let t1;
   let br0;
   let br1;
   let t2;
-  let t3_value = ctx[18].comment + "";
+  let t3_value = ctx[19].comment + "";
   let t3;
   let t4;
   let br2;
   let br3;
   let t5;
-  let t6_value = ctx[18].createdAt + "";
+  let t6_value = ctx[19].createdAt.toLocaleString() + "";
   let t6;
   let t7;
   let br4;
@@ -2056,11 +2053,11 @@ function create_default_slot(ctx) {
       insert_hydration(target, br8, anchor);
     },
     p(ctx2, dirty) {
-      if (dirty & 8 && t0_value !== (t0_value = ctx2[18].user_commented + ""))
+      if (dirty & 4 && t0_value !== (t0_value = ctx2[19].user_commented + ""))
         set_data(t0, t0_value);
-      if (dirty & 8 && t3_value !== (t3_value = ctx2[18].comment + ""))
+      if (dirty & 4 && t3_value !== (t3_value = ctx2[19].comment + ""))
         set_data(t3, t3_value);
-      if (dirty & 8 && t6_value !== (t6_value = ctx2[18].createdAt + ""))
+      if (dirty & 4 && t6_value !== (t6_value = ctx2[19].createdAt.toLocaleString() + ""))
         set_data(t6, t6_value);
     },
     d(detaching) {
@@ -2104,7 +2101,7 @@ function create_default_slot(ctx) {
 function create_each_block_1(ctx) {
   let if_block_anchor;
   let current;
-  let if_block = ctx[18].post_id == ctx[15].id && create_if_block_1(ctx);
+  let if_block = ctx[19].post_id == ctx[16].id && create_if_block_1(ctx);
   return {
     c() {
       if (if_block)
@@ -2123,7 +2120,7 @@ function create_each_block_1(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      if (ctx2[18].post_id == ctx2[15].id) {
+      if (ctx2[19].post_id == ctx2[16].id) {
         if (if_block) {
           if_block.p(ctx2, dirty);
           if (dirty & 12) {
@@ -2164,7 +2161,7 @@ function create_each_block_1(ctx) {
 function create_each_block(ctx) {
   let if_block_anchor;
   let current;
-  let if_block = (ctx[1] == "" || ctx[1] == ctx[15].user) && create_if_block(ctx);
+  let if_block = (ctx[1] == "" || ctx[1] == ctx[16].user) && create_if_block(ctx);
   return {
     c() {
       if (if_block)
@@ -2183,10 +2180,10 @@ function create_each_block(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      if (ctx2[1] == "" || ctx2[1] == ctx2[15].user) {
+      if (ctx2[1] == "" || ctx2[1] == ctx2[16].user) {
         if (if_block) {
           if_block.p(ctx2, dirty);
-          if (dirty & 6) {
+          if (dirty & 10) {
             transition_in(if_block, 1);
           }
         } else {
@@ -2242,7 +2239,7 @@ function create_fragment(ctx) {
   }
   search = new Search({ props: search_props });
   binding_callbacks.push(() => bind(search, "value", search_value_binding));
-  let each_value = ctx[2];
+  let each_value = ctx[3];
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
     each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
@@ -2303,7 +2300,7 @@ function create_fragment(ctx) {
       }
       search.$set(search_changes);
       if (dirty & 127) {
-        each_value = ctx2[2];
+        each_value = ctx2[3];
         let i;
         for (i = 0; i < each_value.length; i += 1) {
           const child_ctx = get_each_context(ctx2, each_value, i);
@@ -2376,43 +2373,45 @@ function instance($$self, $$props, $$invalidate) {
   let searchUser = "";
   let user_comment = [];
   async function upload(post, comment) {
-    let createdAt = new Date().toLocaleString();
     Parse.initialize("AfiNKnlsASUOpcnt89tlHQ37vk9itLIBPhwq8arA", "RCLHA2TyiYdaHiDUcNGkHSwdo46xiohqc3igFZaJ");
     Parse.serverURL = "https://parseapi.back4app.com/";
     const post_comment = new Parse.Object("comments");
-    console.log(post);
     post_comment.set("post_id", post.id);
     post_comment.set("user", $user.name);
     post_comment.set("comment", comment);
-    post_comment.set("createdAt", createdAt);
     try {
       const result = await post_comment.save();
       fetchComments();
     } catch (error) {
       alert("Failed to create new object: " + error.message);
     }
-    console.log(post_comment);
+    let index = user_comment.indexOf(comment);
+    $$invalidate(0, user_comment[index] = "", user_comment);
+    comment = "";
   }
   function like(post) {
     if (post.users_liked.includes($user.name)) {
       let index = post.users_liked.indexOf($user.name);
       post.users_liked.splice(index, 1);
-      post.likes -= 1;
-      $$invalidate(2, posts), $$invalidate(8, $otherBlogs), $$invalidate(0, user_comment);
     } else {
       post.users_liked.push($user.name);
-      post.likes += 1;
-      $$invalidate(2, posts), $$invalidate(8, $otherBlogs), $$invalidate(0, user_comment);
     }
+    post.likes = post.users_liked.length;
     const obj = post.object;
     obj.set("users_liked", post.users_liked);
     obj.set("likes", post.likes);
     obj.save();
-    console.log(posts);
+    fetchBlogs($user.name);
   }
   function search_value_binding(value) {
     searchUser = value;
     $$invalidate(1, searchUser);
+  }
+  function viewer_value_binding(value, post) {
+    if ($$self.$$.not_equal(post.post, value)) {
+      post.post = value;
+      $$invalidate(3, posts), $$invalidate(8, $otherBlogs), $$invalidate(0, user_comment);
+    }
   }
   const click_handler = (post) => $$invalidate(1, searchUser = post.user);
   const click_handler_1 = (post) => like(post);
@@ -2426,7 +2425,7 @@ function instance($$self, $$props, $$invalidate) {
   const click_handler_3 = (post, i) => upload(post, user_comment[i]);
   $$self.$$.update = () => {
     if ($$self.$$.dirty & 257) {
-      $$invalidate(2, posts = $otherBlogs.map((entry) => {
+      $$invalidate(3, posts = $otherBlogs.map((entry) => {
         let id = entry.id;
         let title = entry.title;
         let post = entry.post;
@@ -2454,7 +2453,7 @@ function instance($$self, $$props, $$invalidate) {
       }));
     }
     if ($$self.$$.dirty & 128) {
-      $$invalidate(3, post_comments = $comments.map((entry) => {
+      $$invalidate(2, post_comments = $comments.map((entry) => {
         let post_id = entry["post_id"];
         let comment = entry.comment;
         let user_commented = entry.user_commented;
@@ -2473,14 +2472,15 @@ function instance($$self, $$props, $$invalidate) {
   return [
     user_comment,
     searchUser,
-    posts,
     post_comments,
+    posts,
     $user,
     upload,
     like,
     $comments,
     $otherBlogs,
     search_value_binding,
+    viewer_value_binding,
     click_handler,
     click_handler_1,
     click_handler_2,

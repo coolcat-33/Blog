@@ -1,10 +1,10 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, e as element, w as create_component, c as claim_element, a as children, x as claim_component, d as detach, b as attr, L as toggle_class, g as insert_hydration, y as mount_component, R as listen, q as transition_in, o as transition_out, B as destroy_component, M as update_slot_base, N as get_all_dirty_from_scope, O as get_slot_changes, K as create_slot, k as space, m as claim_space, Q as append_hydration, n as group_outros, p as check_outros, C as assign, P as set_attributes, z as get_spread_update, T as run_all, F as compute_rest_props, a1 as createEventDispatcher, Z as component_subscribe, u as afterUpdate, H as exclude_internal_props, a5 as set_store_value, t as text, h as claim_text, j as set_data, l as empty, a8 as destroy_each, I as bubble, J as binding_callbacks, _ as bind, Y as add_flush_callback } from "../chunks/index-f6cf4e8a.js";
 import { f as fetchBlogs, P as Post, b as blogs } from "../chunks/Post-80c6c73a.js";
-import { t as trackModal, B as Button, u as user } from "../chunks/HeaderSearch.svelte_svelte_type_style_lang-6bc14e48.js";
-import { C as Close } from "../chunks/Close-bf4cda3e.js";
+import { t as trackModal } from "../chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js";
+import { C as Close, B as Button, u as user } from "../chunks/Close-bd2cc31f.js";
 import { w as writable } from "../chunks/index-d888c928.js";
-import { V as Viewer, C as Createpost } from "../chunks/createpost-bfeb1fa1.js";
-import "../chunks/TextInput-db138907.js";
+import Createpost from "./createpost.svelte-de6a61ad.js";
+import { V as Viewer } from "../chunks/viewer-f34691b1.js";
 function get_each_context$1(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[55] = list[i];
@@ -1067,7 +1067,7 @@ function instance$1($$self, $$props, $$invalidate) {
   let { size = void 0 } = $$props;
   let { open = false } = $$props;
   let { danger = false } = $$props;
-  let { alert = false } = $$props;
+  let { alert: alert2 = false } = $$props;
   let { passiveModal = false } = $$props;
   let { modalHeading = void 0 } = $$props;
   let { modalLabel = void 0 } = $$props;
@@ -1212,7 +1212,7 @@ function instance$1($$self, $$props, $$invalidate) {
     if ("danger" in $$new_props)
       $$invalidate(3, danger = $$new_props.danger);
     if ("alert" in $$new_props)
-      $$invalidate(4, alert = $$new_props.alert);
+      $$invalidate(4, alert2 = $$new_props.alert);
     if ("passiveModal" in $$new_props)
       $$invalidate(5, passiveModal = $$new_props.passiveModal);
     if ("modalHeading" in $$new_props)
@@ -1271,7 +1271,7 @@ function instance$1($$self, $$props, $$invalidate) {
     ref,
     size,
     danger,
-    alert,
+    alert2,
     passiveModal,
     modalHeading,
     modalLabel,
@@ -1350,9 +1350,9 @@ class Modal extends SvelteComponent {
 }
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[7] = list[i];
-  child_ctx[8] = list;
-  child_ctx[9] = i;
+  child_ctx[10] = list[i];
+  child_ctx[11] = list;
+  child_ctx[12] = i;
   return child_ctx;
 }
 function create_default_slot_2(ctx) {
@@ -1376,7 +1376,7 @@ function create_default_slot_2(ctx) {
 function create_default_slot_1(ctx) {
   let strong;
   let h2;
-  let t0_value = ctx[7].title + "";
+  let t0_value = ctx[10].title + "";
   let t0;
   let t1;
   let br0;
@@ -1388,26 +1388,26 @@ function create_default_slot_1(ctx) {
   let t4;
   let h6;
   let t5;
-  let t6_value = ctx[7].createdAt + "";
+  let t6_value = ctx[10].createdAt + "";
   let t6;
   let t7;
   let br2;
   let t8;
-  let t9_value = ctx[7].user + "";
+  let t9_value = ctx[10].user + "";
   let t9;
   let t10;
-  let t11_value = ctx[7].email + "";
-  let t11;
-  let t12;
   let br3;
   let br4;
+  let t11;
+  let t12_value = ctx[10].likes + "";
+  let t12;
   let current;
   function viewer_value_binding(value) {
-    ctx[4](value, ctx[7]);
+    ctx[6](value, ctx[10]);
   }
   let viewer_props = {};
-  if (ctx[7].post !== void 0) {
-    viewer_props.value = ctx[7].post;
+  if (ctx[10].post !== void 0) {
+    viewer_props.value = ctx[10].post;
   }
   viewer = new Viewer({ props: viewer_props });
   binding_callbacks.push(() => bind(viewer, "value", viewer_value_binding));
@@ -1430,11 +1430,11 @@ function create_default_slot_1(ctx) {
       br2 = element("br");
       t8 = text("\n        Posted by: ");
       t9 = text(t9_value);
-      t10 = text(" (");
-      t11 = text(t11_value);
-      t12 = text(")\n        \n        ");
+      t10 = space();
       br3 = element("br");
       br4 = element("br");
+      t11 = text("\n        Likes: ");
+      t12 = text(t12_value);
     },
     l(nodes) {
       strong = claim_element(nodes, "STRONG", {});
@@ -1460,11 +1460,11 @@ function create_default_slot_1(ctx) {
       br2 = claim_element(nodes, "BR", {});
       t8 = claim_text(nodes, "\n        Posted by: ");
       t9 = claim_text(nodes, t9_value);
-      t10 = claim_text(nodes, " (");
-      t11 = claim_text(nodes, t11_value);
-      t12 = claim_text(nodes, ")\n        \n        ");
+      t10 = claim_space(nodes);
       br3 = claim_element(nodes, "BR", {});
       br4 = claim_element(nodes, "BR", {});
+      t11 = claim_text(nodes, "\n        Likes: ");
+      t12 = claim_text(nodes, t12_value);
     },
     m(target, anchor) {
       insert_hydration(target, strong, anchor);
@@ -1485,29 +1485,29 @@ function create_default_slot_1(ctx) {
       insert_hydration(target, t8, anchor);
       insert_hydration(target, t9, anchor);
       insert_hydration(target, t10, anchor);
-      insert_hydration(target, t11, anchor);
-      insert_hydration(target, t12, anchor);
       insert_hydration(target, br3, anchor);
       insert_hydration(target, br4, anchor);
+      insert_hydration(target, t11, anchor);
+      insert_hydration(target, t12, anchor);
       current = true;
     },
     p(new_ctx, dirty) {
       ctx = new_ctx;
-      if ((!current || dirty & 2) && t0_value !== (t0_value = ctx[7].title + ""))
+      if ((!current || dirty & 4) && t0_value !== (t0_value = ctx[10].title + ""))
         set_data(t0, t0_value);
       const viewer_changes = {};
-      if (!updating_value && dirty & 2) {
+      if (!updating_value && dirty & 4) {
         updating_value = true;
-        viewer_changes.value = ctx[7].post;
+        viewer_changes.value = ctx[10].post;
         add_flush_callback(() => updating_value = false);
       }
       viewer.$set(viewer_changes);
-      if ((!current || dirty & 2) && t6_value !== (t6_value = ctx[7].createdAt + ""))
+      if ((!current || dirty & 4) && t6_value !== (t6_value = ctx[10].createdAt + ""))
         set_data(t6, t6_value);
-      if ((!current || dirty & 2) && t9_value !== (t9_value = ctx[7].user + ""))
+      if ((!current || dirty & 4) && t9_value !== (t9_value = ctx[10].user + ""))
         set_data(t9, t9_value);
-      if ((!current || dirty & 2) && t11_value !== (t11_value = ctx[7].email + ""))
-        set_data(t11, t11_value);
+      if ((!current || dirty & 4) && t12_value !== (t12_value = ctx[10].likes + ""))
+        set_data(t12, t12_value);
     },
     i(local) {
       if (current)
@@ -1548,13 +1548,13 @@ function create_default_slot_1(ctx) {
       if (detaching)
         detach(t10);
       if (detaching)
-        detach(t11);
-      if (detaching)
-        detach(t12);
-      if (detaching)
         detach(br3);
       if (detaching)
         detach(br4);
+      if (detaching)
+        detach(t11);
+      if (detaching)
+        detach(t12);
     }
   };
 }
@@ -1612,7 +1612,7 @@ function create_each_block(ctx) {
     },
     p(ctx2, dirty) {
       const post_changes = {};
-      if (dirty & 1026) {
+      if (dirty & 8196) {
         post_changes.$$scope = { dirty, ctx: ctx2 };
       }
       post.$set(post_changes);
@@ -1650,8 +1650,17 @@ function create_each_block(ctx) {
 }
 function create_default_slot(ctx) {
   let createpost;
+  let updating_newPost;
   let current;
-  createpost = new Createpost({});
+  function createpost_newPost_binding(value) {
+    ctx[7](value);
+  }
+  let createpost_props = {};
+  if (ctx[1] !== void 0) {
+    createpost_props.newPost = ctx[1];
+  }
+  createpost = new Createpost({ props: createpost_props });
+  binding_callbacks.push(() => bind(createpost, "newPost", createpost_newPost_binding));
   return {
     c() {
       create_component(createpost.$$.fragment);
@@ -1662,6 +1671,15 @@ function create_default_slot(ctx) {
     m(target, anchor) {
       mount_component(createpost, target, anchor);
       current = true;
+    },
+    p(ctx2, dirty) {
+      const createpost_changes = {};
+      if (!updating_newPost && dirty & 2) {
+        updating_newPost = true;
+        createpost_changes.newPost = ctx2[1];
+        add_flush_callback(() => updating_newPost = false);
+      }
+      createpost.$set(createpost_changes);
     },
     i(local) {
       if (current)
@@ -1693,12 +1711,13 @@ function create_fragment(ctx) {
   let current;
   button = new Button({
     props: {
+      kind: "tertiary",
       $$slots: { default: [create_default_slot_2] },
       $$scope: { ctx }
     }
   });
-  button.$on("click", ctx[3]);
-  let each_value = ctx[1];
+  button.$on("click", ctx[5]);
+  let each_value = ctx[2];
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
     each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
@@ -1707,14 +1726,15 @@ function create_fragment(ctx) {
     each_blocks[i] = null;
   });
   function modal_open_binding(value) {
-    ctx[5](value);
+    ctx[8](value);
   }
   let modal_props = {
-    size: "large",
+    size: "lg",
     preventCloseOnClickOutside: true,
     modalHeading: "Add Post",
     primaryButtonText: "Submit",
     secondaryButtonText: "Cancel",
+    shouldSubmitOnEnter: false,
     $$slots: { default: [create_default_slot] },
     $$scope: { ctx }
   };
@@ -1723,6 +1743,7 @@ function create_fragment(ctx) {
   }
   modal = new Modal({ props: modal_props });
   binding_callbacks.push(() => bind(modal, "open", modal_open_binding));
+  modal.$on("submit", ctx[3]);
   return {
     c() {
       br0 = element("br");
@@ -1772,12 +1793,12 @@ function create_fragment(ctx) {
     },
     p(ctx2, [dirty]) {
       const button_changes = {};
-      if (dirty & 1024) {
+      if (dirty & 8192) {
         button_changes.$$scope = { dirty, ctx: ctx2 };
       }
       button.$set(button_changes);
-      if (dirty & 2) {
-        each_value = ctx2[1];
+      if (dirty & 4) {
+        each_value = ctx2[2];
         let i;
         for (i = 0; i < each_value.length; i += 1) {
           const child_ctx = get_each_context(ctx2, each_value, i);
@@ -1798,7 +1819,7 @@ function create_fragment(ctx) {
         check_outros();
       }
       const modal_changes = {};
-      if (dirty & 1024) {
+      if (dirty & 8194) {
         modal_changes.$$scope = { dirty, ctx: ctx2 };
       }
       if (!updating_open && dirty & 1) {
@@ -1852,26 +1873,53 @@ function create_fragment(ctx) {
 }
 function instance($$self, $$props, $$invalidate) {
   let posts;
-  let $blogs;
   let $user;
-  component_subscribe($$self, blogs, ($$value) => $$invalidate(2, $blogs = $$value));
-  component_subscribe($$self, user, ($$value) => $$invalidate(6, $user = $$value));
+  let $blogs;
+  component_subscribe($$self, user, ($$value) => $$invalidate(9, $user = $$value));
+  component_subscribe($$self, blogs, ($$value) => $$invalidate(4, $blogs = $$value));
   fetchBlogs($user.name);
   let open = false;
+  let newPost = { post: "", title: "" };
+  async function upload() {
+    let createdAt = new Date().toLocaleString();
+    Parse.initialize("AfiNKnlsASUOpcnt89tlHQ37vk9itLIBPhwq8arA", "RCLHA2TyiYdaHiDUcNGkHSwdo46xiohqc3igFZaJ");
+    Parse.serverURL = "https://parseapi.back4app.com/";
+    const blog = new Parse.Object("blog");
+    blog.set("createdAt", createdAt);
+    blog.set("email", $user.email);
+    blog.set("title", newPost.title);
+    blog.set("post", newPost.post);
+    blog.set("user", $user.name);
+    blog.set("users_liked", []);
+    blog.set("likes", 0);
+    try {
+      const result = await blog.save();
+    } catch (error) {
+      alert("Failed to create new object: " + error.message);
+    }
+    $$invalidate(1, newPost.title = "", newPost);
+    $$invalidate(1, newPost.post = "", newPost);
+    $$invalidate(0, open = false);
+    fetchBlogs($user.name);
+  }
   const click_handler = () => $$invalidate(0, open = true);
   function viewer_value_binding(value, post) {
     if ($$self.$$.not_equal(post.post, value)) {
       post.post = value;
-      $$invalidate(1, posts), $$invalidate(2, $blogs);
+      $$invalidate(2, posts), $$invalidate(4, $blogs);
     }
+  }
+  function createpost_newPost_binding(value) {
+    newPost = value;
+    $$invalidate(1, newPost);
   }
   function modal_open_binding(value) {
     open = value;
     $$invalidate(0, open);
   }
   $$self.$$.update = () => {
-    if ($$self.$$.dirty & 4) {
-      $$invalidate(1, posts = $blogs.map((entry) => {
+    if ($$self.$$.dirty & 16) {
+      $$invalidate(2, posts = $blogs.map((entry) => {
         let id = entry["id"];
         let title = entry.title;
         let post = entry.post;
@@ -1893,7 +1941,17 @@ function instance($$self, $$props, $$invalidate) {
       }));
     }
   };
-  return [open, posts, $blogs, click_handler, viewer_value_binding, modal_open_binding];
+  return [
+    open,
+    newPost,
+    posts,
+    upload,
+    $blogs,
+    click_handler,
+    viewer_value_binding,
+    createpost_newPost_binding,
+    modal_open_binding
+  ];
 }
 class Myblog extends SvelteComponent {
   constructor(options) {
