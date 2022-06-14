@@ -4794,7 +4794,7 @@ function create_default_slot_5(ctx) {
     props: {
       kind: "tertiary",
       iconDescription: "Dark Mode",
-      icon: ctx[0] ? Asleep : AsleepFilled
+      icon: ctx[1] ? Asleep : AsleepFilled
     }
   });
   button.$on("click", ctx[5]);
@@ -4807,8 +4807,8 @@ function create_default_slot_5(ctx) {
     $$slots: { default: [create_default_slot_6] },
     $$scope: { ctx }
   };
-  if (ctx[2] !== void 0) {
-    headeraction1_props.isOpen = ctx[2];
+  if (ctx[0] !== void 0) {
+    headeraction1_props.isOpen = ctx[0];
   }
   headeraction1 = new HeaderAction({ props: headeraction1_props });
   binding_callbacks.push(() => bind(headeraction1, "isOpen", headeraction1_isOpen_binding));
@@ -4837,16 +4837,16 @@ function create_default_slot_5(ctx) {
     },
     p(ctx2, dirty) {
       const button_changes = {};
-      if (dirty & 1)
-        button_changes.icon = ctx2[0] ? Asleep : AsleepFilled;
+      if (dirty & 2)
+        button_changes.icon = ctx2[1] ? Asleep : AsleepFilled;
       button.$set(button_changes);
       const headeraction1_changes = {};
       if (dirty & 4112) {
         headeraction1_changes.$$scope = { dirty, ctx: ctx2 };
       }
-      if (!updating_isOpen && dirty & 4) {
+      if (!updating_isOpen && dirty & 1) {
         updating_isOpen = true;
-        headeraction1_changes.isOpen = ctx2[2];
+        headeraction1_changes.isOpen = ctx2[0];
         add_flush_callback(() => updating_isOpen = false);
       }
       headeraction1.$set(headeraction1_changes);
@@ -5072,8 +5072,8 @@ function create_default_slot_1(ctx) {
     $$slots: { default: [create_default_slot_2] },
     $$scope: { ctx }
   };
-  if (ctx[1] !== void 0) {
-    sidenav_props.isOpen = ctx[1];
+  if (ctx[2] !== void 0) {
+    sidenav_props.isOpen = ctx[2];
   }
   sidenav = new SideNav({ props: sidenav_props });
   binding_callbacks.push(() => bind(sidenav, "isOpen", sidenav_isOpen_binding));
@@ -5107,7 +5107,7 @@ function create_default_slot_1(ctx) {
       }
       headernav.$set(headernav_changes);
       const headerutilities_changes = {};
-      if (dirty & 4117) {
+      if (dirty & 4115) {
         headerutilities_changes.$$scope = { dirty, ctx: ctx2 };
       }
       headerutilities.$set(headerutilities_changes);
@@ -5115,9 +5115,9 @@ function create_default_slot_1(ctx) {
       if (dirty & 4096) {
         sidenav_changes.$$scope = { dirty, ctx: ctx2 };
       }
-      if (!updating_isOpen && dirty & 2) {
+      if (!updating_isOpen && dirty & 4) {
         updating_isOpen = true;
-        sidenav_changes.isOpen = ctx2[1];
+        sidenav_changes.isOpen = ctx2[2];
         add_flush_callback(() => updating_isOpen = false);
       }
       sidenav.$set(sidenav_changes);
@@ -5359,8 +5359,8 @@ function create_fragment(ctx) {
     },
     $$scope: { ctx }
   };
-  if (ctx[1] !== void 0) {
-    header_props.isSideNavOpen = ctx[1];
+  if (ctx[2] !== void 0) {
+    header_props.isSideNavOpen = ctx[2];
   }
   header = new Header({ props: header_props });
   binding_callbacks.push(() => bind(header, "isSideNavOpen", header_isSideNavOpen_binding));
@@ -5410,9 +5410,9 @@ function create_fragment(ctx) {
       if (dirty & 4127) {
         header_changes.$$scope = { dirty, ctx: ctx2 };
       }
-      if (!updating_isSideNavOpen && dirty & 2) {
+      if (!updating_isSideNavOpen && dirty & 4) {
         updating_isSideNavOpen = true;
-        header_changes.isSideNavOpen = ctx2[1];
+        header_changes.isSideNavOpen = ctx2[2];
         add_flush_callback(() => updating_isSideNavOpen = false);
       }
       header.$set(header_changes);
@@ -5476,36 +5476,34 @@ function instance($$self, $$props, $$invalidate) {
     } else {
       document.documentElement.setAttribute("theme", "white");
     }
-    $$invalidate(0, dark = !dark);
+    $$invalidate(1, dark = !dark);
   }
   window.onLoadCallback = () => {
-    userLoggedIn = gapi.auth2.getAuthInstance().isSignedIn.get();
+    $$invalidate(0, userLoggedIn = gapi.auth2.getAuthInstance().isSignedIn.get());
     console.log(userLoggedIn);
     if (userLoggedIn) {
       console.log(GoogleAuth.currentUser.get());
     }
   };
   let isSideNavOpen = false;
-  let isOpen1 = false;
   function logout() {
     const auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(() => {
       set_store_value(user, $user["userLoggedIn"] = false, $user);
-      $$invalidate(2, isOpen1 = false);
       goto("", { replaceState: true });
     });
   }
   function headeraction1_isOpen_binding(value) {
-    isOpen1 = value;
-    $$invalidate(2, isOpen1);
+    userLoggedIn = value;
+    $$invalidate(0, userLoggedIn);
   }
   function sidenav_isOpen_binding(value) {
     isSideNavOpen = value;
-    $$invalidate(1, isSideNavOpen);
+    $$invalidate(2, isSideNavOpen);
   }
   function header_isSideNavOpen_binding(value) {
     isSideNavOpen = value;
-    $$invalidate(1, isSideNavOpen);
+    $$invalidate(2, isSideNavOpen);
   }
   $$self.$$set = ($$props2) => {
     if ("$$scope" in $$props2)
@@ -5517,9 +5515,9 @@ function instance($$self, $$props, $$invalidate) {
     }
   };
   return [
+    userLoggedIn,
     dark,
     isSideNavOpen,
-    isOpen1,
     currentUrl,
     $user,
     setDarkMode,
