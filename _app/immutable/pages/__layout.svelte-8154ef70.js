@@ -4787,7 +4787,7 @@ function create_default_slot_5(ctx) {
     props: {
       icon: "",
       transition: "false",
-      text: "This app was inspired by BXB8508"
+      text: "This app was inspired by my BFF"
     }
   });
   button = new Button({
