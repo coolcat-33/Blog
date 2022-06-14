@@ -1,9 +1,9 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, U as svg_element, t as text, V as claim_svg_element, a as children, h as claim_text, d as detach, g as insert_hydration, Q as append_hydration, j as set_data, C as assign, b as attr, W as set_svg_attributes, z as get_spread_update, E as noop, F as compute_rest_props, H as exclude_internal_props, e as element, k as space, c as claim_element, m as claim_space, L as toggle_class, P as set_attributes, R as listen, T as run_all, I as bubble, l as empty, n as group_outros, o as transition_out, p as check_outros, q as transition_in, a1 as createEventDispatcher, J as binding_callbacks, K as create_slot, w as create_component, x as claim_component, y as mount_component, aa as set_input_value, B as destroy_component, M as update_slot_base, N as get_all_dirty_from_scope, O as get_slot_changes, A as get_spread_object, _ as bind, Y as add_flush_callback, a8 as destroy_each, Z as component_subscribe } from "../chunks/index-f6cf4e8a.js";
-import { f as fetchBlogs, P as Post, o as otherBlogs } from "../chunks/Post-58fe7a05.js";
-import { w as writable } from "../chunks/index-d888c928.js";
+import { f as fetchBlogs, P as Post, C as Comment, a as fetchComments, c as comments, o as otherBlogs } from "../chunks/comments-aa114095.js";
 import { T as TextInput, V as Viewer } from "../chunks/viewer-f34691b1.js";
 import "../chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js";
 import { C as Close, B as Button, u as user } from "../chunks/Close-bd2cc31f.js";
+import "../chunks/index-d888c928.js";
 function create_if_block$4(ctx) {
   let title_1;
   let t;
@@ -32,7 +32,7 @@ function create_if_block$4(ctx) {
     }
   };
 }
-function create_fragment$6(ctx) {
+function create_fragment$5(ctx) {
   let svg;
   let path;
   let if_block = ctx[1] && create_if_block$4(ctx);
@@ -119,7 +119,7 @@ function create_fragment$6(ctx) {
     }
   };
 }
-function instance$6($$self, $$props, $$invalidate) {
+function instance$5($$self, $$props, $$invalidate) {
   let labelled;
   let attributes;
   const omit_props_names = ["size", "title"];
@@ -148,10 +148,10 @@ function instance$6($$self, $$props, $$invalidate) {
 class IconSearch extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$6, create_fragment$6, safe_not_equal, { size: 0, title: 1 });
+    init(this, options, instance$5, create_fragment$5, safe_not_equal, { size: 0, title: 1 });
   }
 }
-function create_fragment$5(ctx) {
+function create_fragment$4(ctx) {
   let div1;
   let span;
   let t;
@@ -223,7 +223,7 @@ function create_fragment$5(ctx) {
     }
   };
 }
-function instance$5($$self, $$props, $$invalidate) {
+function instance$4($$self, $$props, $$invalidate) {
   const omit_props_names = ["size"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { size = "xl" } = $$props;
@@ -257,7 +257,7 @@ function instance$5($$self, $$props, $$invalidate) {
 class SearchSkeleton extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$5, create_fragment$5, safe_not_equal, { size: 0 });
+    init(this, options, instance$4, create_fragment$4, safe_not_equal, { size: 0 });
   }
 }
 const get_labelText_slot_changes = (dirty) => ({});
@@ -650,7 +650,7 @@ function fallback_block(ctx) {
     }
   };
 }
-function create_fragment$4(ctx) {
+function create_fragment$3(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
@@ -717,7 +717,7 @@ function create_fragment$4(ctx) {
     }
   };
 }
-function instance$4($$self, $$props, $$invalidate) {
+function instance$3($$self, $$props, $$invalidate) {
   const omit_props_names = [
     "value",
     "size",
@@ -926,7 +926,7 @@ function instance$4($$self, $$props, $$invalidate) {
 class Search extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$4, create_fragment$4, safe_not_equal, {
+    init(this, options, instance$3, create_fragment$3, safe_not_equal, {
       value: 2,
       size: 3,
       searchClass: 4,
@@ -944,93 +944,6 @@ class Search extends SvelteComponent {
       id: 15,
       ref: 1
     }, null, [-1, -1]);
-  }
-}
-const comments = writable([]);
-Parse.initialize("AfiNKnlsASUOpcnt89tlHQ37vk9itLIBPhwq8arA", "RCLHA2TyiYdaHiDUcNGkHSwdo46xiohqc3igFZaJ");
-Parse.serverURL = "https://parseapi.back4app.com/";
-const fetchComments = async () => {
-  const query = new Parse.Query("comments");
-  query.find().then((results) => {
-    let data = [];
-    for (const object of results) {
-      let post_id = object.get("post_id");
-      let comment = object.get("comment");
-      let user_commented = object.get("user");
-      let createdAt = object.get("createdAt");
-      data.push({ user_commented, object, post_id, comment, createdAt });
-    }
-    comments.set(data);
-  });
-};
-fetchComments();
-function create_fragment$3(ctx) {
-  let div;
-  let current;
-  const default_slot_template = ctx[1].default;
-  const default_slot = create_slot(default_slot_template, ctx, ctx[0], null);
-  return {
-    c() {
-      div = element("div");
-      if (default_slot)
-        default_slot.c();
-      this.h();
-    },
-    l(nodes) {
-      div = claim_element(nodes, "DIV", { id: true });
-      var div_nodes = children(div);
-      if (default_slot)
-        default_slot.l(div_nodes);
-      div_nodes.forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(div, "id", "comment");
-    },
-    m(target, anchor) {
-      insert_hydration(target, div, anchor);
-      if (default_slot) {
-        default_slot.m(div, null);
-      }
-      current = true;
-    },
-    p(ctx2, [dirty]) {
-      if (default_slot) {
-        if (default_slot.p && (!current || dirty & 1)) {
-          update_slot_base(default_slot, default_slot_template, ctx2, ctx2[0], !current ? get_all_dirty_from_scope(ctx2[0]) : get_slot_changes(default_slot_template, ctx2[0], dirty, null), null);
-        }
-      }
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(default_slot, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(default_slot, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching)
-        detach(div);
-      if (default_slot)
-        default_slot.d(detaching);
-    }
-  };
-}
-function instance$3($$self, $$props, $$invalidate) {
-  let { $$slots: slots = {}, $$scope } = $$props;
-  $$self.$$set = ($$props2) => {
-    if ("$$scope" in $$props2)
-      $$invalidate(0, $$scope = $$props2.$$scope);
-  };
-  return [$$scope, slots];
-}
-class Comment extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$3, create_fragment$3, safe_not_equal, {});
   }
 }
 function create_if_block$2(ctx) {

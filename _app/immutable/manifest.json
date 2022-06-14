@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-cf15c844.js",
+    "file": "start-8750cf6c.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -74,13 +74,13 @@
     ]
   },
   "src/routes/myblog.svelte": {
-    "file": "pages/myblog.svelte-bedca3e6.js",
+    "file": "pages/myblog.svelte-c3d71e69.js",
     "src": "src/routes/myblog.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-f6cf4e8a.js",
-      "_Post-58fe7a05.js",
+      "_comments-aa114095.js",
       "_HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js",
       "_Close-bd2cc31f.js",
       "_index-d888c928.js",
@@ -89,17 +89,17 @@
     ]
   },
   "src/routes/otherblog.svelte": {
-    "file": "pages/otherblog.svelte-5c74b4a2.js",
+    "file": "pages/otherblog.svelte-30e4bd0a.js",
     "src": "src/routes/otherblog.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-f6cf4e8a.js",
-      "_Post-58fe7a05.js",
-      "_index-d888c928.js",
+      "_comments-aa114095.js",
       "_viewer-f34691b1.js",
       "_HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js",
-      "_Close-bd2cc31f.js"
+      "_Close-bd2cc31f.js",
+      "_index-d888c928.js"
     ]
   },
   "_index-f6cf4e8a.js": {
@@ -137,14 +137,14 @@
       "_index-f6cf4e8a.js"
     ]
   },
-  "_Post-58fe7a05.js": {
-    "file": "chunks/Post-58fe7a05.js",
+  "_comments-aa114095.js": {
+    "file": "chunks/comments-aa114095.js",
     "imports": [
       "_index-d888c928.js",
       "_index-f6cf4e8a.js"
     ],
     "css": [
-      "assets/Post-76ffc665.css"
+      "assets/comments-7f89075b.css"
     ]
   }
 }

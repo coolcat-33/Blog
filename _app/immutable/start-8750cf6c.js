@@ -778,8 +778,8 @@ const components = [
   () => __vitePreload(() => import("./pages/createpost.svelte-de6a61ad.js"), true ? ["pages/createpost.svelte-de6a61ad.js","assets/pages/createpost.svelte-d41af497.css","chunks/index-f6cf4e8a.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/index-d888c928.js","chunks/viewer-f34691b1.js"] : void 0),
   () => __vitePreload(() => import("./pages/help.svelte-11982e1e.js"), true ? ["pages/help.svelte-11982e1e.js","chunks/index-f6cf4e8a.js"] : void 0),
   () => __vitePreload(() => import("./pages/index.svelte-140b4665.js"), true ? ["pages/index.svelte-140b4665.js","chunks/index-f6cf4e8a.js"] : void 0),
-  () => __vitePreload(() => import("./pages/myblog.svelte-bedca3e6.js"), true ? ["pages/myblog.svelte-bedca3e6.js","chunks/index-f6cf4e8a.js","chunks/Post-58fe7a05.js","assets/Post-76ffc665.css","chunks/index-d888c928.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/Close-bd2cc31f.js","pages/createpost.svelte-de6a61ad.js","assets/pages/createpost.svelte-d41af497.css","chunks/viewer-f34691b1.js"] : void 0),
-  () => __vitePreload(() => import("./pages/otherblog.svelte-5c74b4a2.js"), true ? ["pages/otherblog.svelte-5c74b4a2.js","chunks/index-f6cf4e8a.js","chunks/Post-58fe7a05.js","assets/Post-76ffc665.css","chunks/index-d888c928.js","chunks/viewer-f34691b1.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/Close-bd2cc31f.js"] : void 0)
+  () => __vitePreload(() => import("./pages/myblog.svelte-c3d71e69.js"), true ? ["pages/myblog.svelte-c3d71e69.js","chunks/index-f6cf4e8a.js","chunks/comments-aa114095.js","assets/comments-7f89075b.css","chunks/index-d888c928.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/Close-bd2cc31f.js","pages/createpost.svelte-de6a61ad.js","assets/pages/createpost.svelte-d41af497.css","chunks/viewer-f34691b1.js"] : void 0),
+  () => __vitePreload(() => import("./pages/otherblog.svelte-30e4bd0a.js"), true ? ["pages/otherblog.svelte-30e4bd0a.js","chunks/index-f6cf4e8a.js","chunks/comments-aa114095.js","assets/comments-7f89075b.css","chunks/index-d888c928.js","chunks/viewer-f34691b1.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-954be5d7.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/Close-bd2cc31f.js"] : void 0)
 ];
 const dictionary = {
   "": [[0, 4], [1]],
@@ -889,7 +889,7 @@ function notifiable_store(value) {
 }
 function create_updated_store() {
   const { set, subscribe } = writable(false);
-  const initial = "1655187645495";
+  const initial = "1655189243164";
   let timeout;
   async function check() {
     clearTimeout(timeout);

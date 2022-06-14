@@ -33,7 +33,7 @@ const fetchBlogs = async (username) => {
   });
 };
 var Post_svelte_svelte_type_style_lang = /* @__PURE__ */ (() => ".card.svelte-f0u4s1{box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);transition:0.3s;border-radius:5px}.card.svelte-f0u4s1:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2)}")();
-function create_fragment(ctx) {
+function create_fragment$1(ctx) {
   let div;
   let current;
   const default_slot_template = ctx[1].default;
@@ -88,7 +88,7 @@ function create_fragment(ctx) {
     }
   };
 }
-function instance($$self, $$props, $$invalidate) {
+function instance$1($$self, $$props, $$invalidate) {
   let { $$slots: slots = {}, $$scope } = $$props;
   $$self.$$set = ($$props2) => {
     if ("$$scope" in $$props2)
@@ -99,7 +99,94 @@ function instance($$self, $$props, $$invalidate) {
 class Post extends SvelteComponent {
   constructor(options) {
     super();
+    init(this, options, instance$1, create_fragment$1, safe_not_equal, {});
+  }
+}
+function create_fragment(ctx) {
+  let div;
+  let current;
+  const default_slot_template = ctx[1].default;
+  const default_slot = create_slot(default_slot_template, ctx, ctx[0], null);
+  return {
+    c() {
+      div = element("div");
+      if (default_slot)
+        default_slot.c();
+      this.h();
+    },
+    l(nodes) {
+      div = claim_element(nodes, "DIV", { id: true });
+      var div_nodes = children(div);
+      if (default_slot)
+        default_slot.l(div_nodes);
+      div_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(div, "id", "comment");
+    },
+    m(target, anchor) {
+      insert_hydration(target, div, anchor);
+      if (default_slot) {
+        default_slot.m(div, null);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & 1)) {
+          update_slot_base(default_slot, default_slot_template, ctx2, ctx2[0], !current ? get_all_dirty_from_scope(ctx2[0]) : get_slot_changes(default_slot_template, ctx2[0], dirty, null), null);
+        }
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching)
+        detach(div);
+      if (default_slot)
+        default_slot.d(detaching);
+    }
+  };
+}
+function instance($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("$$scope" in $$props2)
+      $$invalidate(0, $$scope = $$props2.$$scope);
+  };
+  return [$$scope, slots];
+}
+class Comment extends SvelteComponent {
+  constructor(options) {
+    super();
     init(this, options, instance, create_fragment, safe_not_equal, {});
   }
 }
-export { Post as P, blogs as b, fetchBlogs as f, otherBlogs as o };
+const comments = writable([]);
+Parse.initialize("AfiNKnlsASUOpcnt89tlHQ37vk9itLIBPhwq8arA", "RCLHA2TyiYdaHiDUcNGkHSwdo46xiohqc3igFZaJ");
+Parse.serverURL = "https://parseapi.back4app.com/";
+const fetchComments = async () => {
+  const query = new Parse.Query("comments");
+  query.find().then((results) => {
+    let data = [];
+    for (const object of results) {
+      let post_id = object.get("post_id");
+      let comment = object.get("comment");
+      let user_commented = object.get("user");
+      let createdAt = object.get("createdAt");
+      data.push({ user_commented, object, post_id, comment, createdAt });
+    }
+    comments.set(data);
+  });
+};
+fetchComments();
+export { Comment as C, Post as P, fetchComments as a, blogs as b, comments as c, fetchBlogs as f, otherBlogs as o };
