@@ -4794,7 +4794,7 @@ function create_default_slot_5(ctx) {
     props: {
       kind: "tertiary",
       iconDescription: "Dark Mode",
-      icon: ctx[0] ? Asleep : AsleepFilled
+      icon: ctx[0] ? AsleepFilled : Asleep
     }
   });
   button.$on("click", ctx[5]);
@@ -4838,7 +4838,7 @@ function create_default_slot_5(ctx) {
     p(ctx2, dirty) {
       const button_changes = {};
       if (dirty & 1)
-        button_changes.icon = ctx2[0] ? Asleep : AsleepFilled;
+        button_changes.icon = ctx2[0] ? AsleepFilled : Asleep;
       button.$set(button_changes);
       const headeraction1_changes = {};
       if (dirty & 4112) {
