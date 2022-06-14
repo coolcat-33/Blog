@@ -776,13 +776,15 @@ const components = [
   () => __vitePreload(() => import("./pages/__layout.svelte-b5eba7a5.js"), true ? ["pages/__layout.svelte-b5eba7a5.js","chunks/index-7843d973.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-a4bfa871.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/index-dfa38e18.js","chunks/Button-60074b90.js","chunks/Close-d809ac48.js","chunks/singletons-d1fb5791.js"] : void 0),
   () => __vitePreload(() => import("./error.svelte-4d5333d5.js"), true ? ["error.svelte-4d5333d5.js","chunks/index-7843d973.js"] : void 0),
   () => __vitePreload(() => import("./pages/createpost.svelte-4e055a73.js"), true ? ["pages/createpost.svelte-4e055a73.js","chunks/index-7843d973.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-a4bfa871.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/index-dfa38e18.js","chunks/Button-60074b90.js","chunks/TextInput-372b05e9.js","chunks/index-74738e1e.js","assets/index-a30d8c3e.css"] : void 0),
+  () => __vitePreload(() => import("./pages/index.svelte-279bb3d2.js"), true ? ["pages/index.svelte-279bb3d2.js","chunks/index-7843d973.js"] : void 0),
   () => __vitePreload(() => import("./pages/myblog.svelte-b1d9c2f9.js"), true ? ["pages/myblog.svelte-b1d9c2f9.js","chunks/index-7843d973.js","chunks/Post-c5b4522f.js","assets/Post-29c31e56.css","chunks/index-dfa38e18.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-a4bfa871.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/index-74738e1e.js","assets/index-a30d8c3e.css"] : void 0),
   () => __vitePreload(() => import("./pages/otherblog.svelte-15437ed9.js"), true ? ["pages/otherblog.svelte-15437ed9.js","chunks/index-7843d973.js","chunks/Post-c5b4522f.js","assets/Post-29c31e56.css","chunks/index-dfa38e18.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-a4bfa871.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/Button-60074b90.js","chunks/Close-d809ac48.js","chunks/TextInput-372b05e9.js"] : void 0)
 ];
 const dictionary = {
+  "": [[0, 3], [1]],
   "createpost": [[0, 2], [1]],
-  "myblog": [[0, 3], [1]],
-  "otherblog": [[0, 4], [1]]
+  "myblog": [[0, 4], [1]],
+  "otherblog": [[0, 5], [1]]
 };
 function coalesce_to_error(err) {
   return err instanceof Error || err && err.name && err.message ? err : new Error(JSON.stringify(err));
@@ -885,7 +887,7 @@ function notifiable_store(value) {
 }
 function create_updated_store() {
   const { set, subscribe } = writable(false);
-  const initial = "1655175350065";
+  const initial = "1655176819937";
   let timeout;
   async function check() {
     clearTimeout(timeout);
