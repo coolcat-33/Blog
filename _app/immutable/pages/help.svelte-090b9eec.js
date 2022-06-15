@@ -43,10 +43,22 @@ function create_fragment(ctx) {
   let t18;
   let t19;
   let br15;
-  let br16;
   let t20;
   let h53;
   let t21;
+  let t22;
+  let br16;
+  let br17;
+  let br18;
+  let t23;
+  let h34;
+  let t24;
+  let t25;
+  let br19;
+  let br20;
+  let t26;
+  let h54;
+  let t27;
   return {
     c() {
       h30 = element("h3");
@@ -89,13 +101,25 @@ function create_fragment(ctx) {
       br14 = element("br");
       t17 = space();
       h33 = element("h3");
-      t18 = text("Note:");
+      t18 = text("Reporting Comments/Posts:");
       t19 = space();
       br15 = element("br");
-      br16 = element("br");
       t20 = space();
       h53 = element("h5");
-      t21 = text("When you create/edit/delete a post or a comment, please wait for a couple seconds before reclicking the submit button. Reclicking the submit button multiple times will result in duplicate posts/comments.");
+      t21 = text("If you think any comment/post is offensive and inappropiate in any way, you can report the post/comment. When at least 3 people have reported that post/comment it will be hidden from view.");
+      t22 = space();
+      br16 = element("br");
+      br17 = element("br");
+      br18 = element("br");
+      t23 = space();
+      h34 = element("h3");
+      t24 = text("Note:");
+      t25 = space();
+      br19 = element("br");
+      br20 = element("br");
+      t26 = space();
+      h54 = element("h5");
+      t27 = text("When you create/edit/delete a post or a comment, please wait for a couple seconds before reclicking the submit button. Reclicking the submit button multiple times will result in duplicate posts/comments.");
     },
     l(nodes) {
       h30 = claim_element(nodes, "H3", {});
@@ -151,16 +175,32 @@ function create_fragment(ctx) {
       t17 = claim_space(nodes);
       h33 = claim_element(nodes, "H3", {});
       var h33_nodes = children(h33);
-      t18 = claim_text(h33_nodes, "Note:");
+      t18 = claim_text(h33_nodes, "Reporting Comments/Posts:");
       h33_nodes.forEach(detach);
       t19 = claim_space(nodes);
       br15 = claim_element(nodes, "BR", {});
-      br16 = claim_element(nodes, "BR", {});
       t20 = claim_space(nodes);
       h53 = claim_element(nodes, "H5", {});
       var h53_nodes = children(h53);
-      t21 = claim_text(h53_nodes, "When you create/edit/delete a post or a comment, please wait for a couple seconds before reclicking the submit button. Reclicking the submit button multiple times will result in duplicate posts/comments.");
+      t21 = claim_text(h53_nodes, "If you think any comment/post is offensive and inappropiate in any way, you can report the post/comment. When at least 3 people have reported that post/comment it will be hidden from view.");
       h53_nodes.forEach(detach);
+      t22 = claim_space(nodes);
+      br16 = claim_element(nodes, "BR", {});
+      br17 = claim_element(nodes, "BR", {});
+      br18 = claim_element(nodes, "BR", {});
+      t23 = claim_space(nodes);
+      h34 = claim_element(nodes, "H3", {});
+      var h34_nodes = children(h34);
+      t24 = claim_text(h34_nodes, "Note:");
+      h34_nodes.forEach(detach);
+      t25 = claim_space(nodes);
+      br19 = claim_element(nodes, "BR", {});
+      br20 = claim_element(nodes, "BR", {});
+      t26 = claim_space(nodes);
+      h54 = claim_element(nodes, "H5", {});
+      var h54_nodes = children(h54);
+      t27 = claim_text(h54_nodes, "When you create/edit/delete a post or a comment, please wait for a couple seconds before reclicking the submit button. Reclicking the submit button multiple times will result in duplicate posts/comments.");
+      h54_nodes.forEach(detach);
     },
     m(target, anchor) {
       insert_hydration(target, h30, anchor);
@@ -206,10 +246,22 @@ function create_fragment(ctx) {
       append_hydration(h33, t18);
       insert_hydration(target, t19, anchor);
       insert_hydration(target, br15, anchor);
-      insert_hydration(target, br16, anchor);
       insert_hydration(target, t20, anchor);
       insert_hydration(target, h53, anchor);
       append_hydration(h53, t21);
+      insert_hydration(target, t22, anchor);
+      insert_hydration(target, br16, anchor);
+      insert_hydration(target, br17, anchor);
+      insert_hydration(target, br18, anchor);
+      insert_hydration(target, t23, anchor);
+      insert_hydration(target, h34, anchor);
+      append_hydration(h34, t24);
+      insert_hydration(target, t25, anchor);
+      insert_hydration(target, br19, anchor);
+      insert_hydration(target, br20, anchor);
+      insert_hydration(target, t26, anchor);
+      insert_hydration(target, h54, anchor);
+      append_hydration(h54, t27);
     },
     p: noop,
     i: noop,
@@ -288,11 +340,31 @@ function create_fragment(ctx) {
       if (detaching)
         detach(br15);
       if (detaching)
-        detach(br16);
-      if (detaching)
         detach(t20);
       if (detaching)
         detach(h53);
+      if (detaching)
+        detach(t22);
+      if (detaching)
+        detach(br16);
+      if (detaching)
+        detach(br17);
+      if (detaching)
+        detach(br18);
+      if (detaching)
+        detach(t23);
+      if (detaching)
+        detach(h34);
+      if (detaching)
+        detach(t25);
+      if (detaching)
+        detach(br19);
+      if (detaching)
+        detach(br20);
+      if (detaching)
+        detach(t26);
+      if (detaching)
+        detach(h54);
     }
   };
 }
