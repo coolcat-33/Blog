@@ -20,10 +20,11 @@ const fetchBlogs = async (username) => {
       const name = object.get("user");
       const email = object.get("email");
       let createdAt = new Date(object.get("createdAt")).toLocaleString();
+      let reports = object.get("reports");
       if (username == name) {
-        data.push({ id, title, post, users_liked, likes, object, user: name, email, createdAt });
+        data.push({ id, title, post, users_liked, likes, object, user: name, email, createdAt, reports });
       } else {
-        otherData.push({ id, title, post, users_liked, likes, object, user: name, email, createdAt });
+        otherData.push({ id, title, post, users_liked, likes, object, user: name, email, createdAt, reports });
         users[username] = username;
       }
     }
@@ -184,7 +185,8 @@ const fetchComments = async () => {
       let comment = object.get("comment");
       let user_commented = object.get("user");
       let createdAt = object.get("createdAt");
-      data.push({ user_commented, object, post_id, comment, createdAt });
+      let comment_id = object.id;
+      data.push({ user_commented, object, post_id, comment, createdAt, comment_id });
     }
     comments.set(data);
   });

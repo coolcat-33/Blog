@@ -2449,7 +2449,7 @@ function create_fragment(ctx) {
   function editor_value_binding(value) {
     ctx[3](value);
   }
-  let editor_props = {};
+  let editor_props = { enableSpellCheck: true };
   if (ctx[0].post !== void 0) {
     editor_props.value = ctx[0].post;
   }

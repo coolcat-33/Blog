@@ -1,9 +1,9 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, e as element, w as create_component, c as claim_element, a as children, x as claim_component, d as detach, b as attr, L as toggle_class, g as insert_hydration, y as mount_component, R as listen, q as transition_in, o as transition_out, B as destroy_component, M as update_slot_base, N as get_all_dirty_from_scope, O as get_slot_changes, K as create_slot, k as space, m as claim_space, Q as append_hydration, n as group_outros, p as check_outros, C as assign, P as set_attributes, z as get_spread_update, T as run_all, F as compute_rest_props, a1 as createEventDispatcher, Z as component_subscribe, u as afterUpdate, H as exclude_internal_props, a6 as set_store_value, t as text, h as claim_text, j as set_data, l as empty, a9 as destroy_each, I as bubble, J as binding_callbacks, U as svg_element, V as claim_svg_element, W as set_svg_attributes, E as noop, _ as bind, Y as add_flush_callback } from "../chunks/index-fe8f50da.js";
-import { f as fetchBlogs, C as Comment, P as Post, c as comments, b as blogs } from "../chunks/comments-b5a00511.js";
+import { f as fetchBlogs, C as Comment, P as Post, c as comments, b as blogs } from "../chunks/comments-a240716a.js";
 import { t as trackModal } from "../chunks/HeaderSearch.svelte_svelte_type_style_lang-50804c02.js";
 import { C as Close, B as Button, u as user } from "../chunks/Close-d254d283.js";
 import { w as writable } from "../chunks/index-8a7c489c.js";
-import Createpost from "./createpost.svelte-d6687101.js";
+import Createpost from "./createpost.svelte-48771d3c.js";
 import { V as Viewer } from "../chunks/viewer-72edec5c.js";
 function get_each_context$1(ctx, list, i) {
   const child_ctx = ctx.slice();
@@ -2604,6 +2604,7 @@ function instance($$self, $$props, $$invalidate) {
       blog.set("user", $user.name);
       blog.set("users_liked", []);
       blog.set("likes", 0);
+      blog.set("reports", []);
     }
     blog.set("title", newPost.title);
     blog.set("post", newPost.post);
@@ -2658,6 +2659,7 @@ function instance($$self, $$props, $$invalidate) {
         let user2 = entry.user;
         let email = entry.email;
         let createdAt = entry.createdAt;
+        let reports = entry.reports;
         return {
           id,
           title,
@@ -2667,7 +2669,8 @@ function instance($$self, $$props, $$invalidate) {
           users_liked,
           user: user2,
           email,
-          createdAt
+          createdAt,
+          reports
         };
       }));
     }

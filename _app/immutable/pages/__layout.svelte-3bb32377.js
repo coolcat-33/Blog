@@ -4787,7 +4787,7 @@ function create_default_slot_5(ctx) {
     props: {
       icon: "",
       transition: "false",
-      text: "This app was inspired by my BFF"
+      text: "This app was inspired by my friend"
     }
   });
   button = new Button({
@@ -4880,10 +4880,10 @@ function create_default_slot_4(ctx) {
   let t;
   return {
     c() {
-      t = text("This app was inspired by my BFF");
+      t = text("This app was inspired by my friend");
     },
     l(nodes) {
-      t = claim_text(nodes, "This app was inspired by my BFF");
+      t = claim_text(nodes, "This app was inspired by my friend");
     },
     m(target, anchor) {
       insert_hydration(target, t, anchor);
