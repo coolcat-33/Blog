@@ -1,5 +1,5 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, U as svg_element, t as text, V as claim_svg_element, a as children, h as claim_text, d as detach, g as insert_hydration, Q as append_hydration, j as set_data, C as assign, b as attr, W as set_svg_attributes, z as get_spread_update, E as noop, F as compute_rest_props, H as exclude_internal_props, e as element, k as space, c as claim_element, m as claim_space, L as toggle_class, P as set_attributes, R as listen, T as run_all, I as bubble, l as empty, n as group_outros, o as transition_out, p as check_outros, q as transition_in, a1 as createEventDispatcher, J as binding_callbacks, K as create_slot, w as create_component, x as claim_component, y as mount_component, ab as set_input_value, B as destroy_component, M as update_slot_base, N as get_all_dirty_from_scope, O as get_slot_changes, A as get_spread_object, _ as bind, Y as add_flush_callback, a9 as destroy_each, Z as component_subscribe } from "../chunks/index-fe8f50da.js";
-import { f as fetchBlogs, P as Post, C as Comment, a as fetchComments, c as comments, o as otherBlogs } from "../chunks/comments-a240716a.js";
+import { f as fetchBlogs, P as Post, C as Comment, a as fetchComments, c as comments, o as otherBlogs } from "../chunks/comments-90ffdf00.js";
 import { T as TextInput, V as Viewer } from "../chunks/viewer-72edec5c.js";
 import "../chunks/HeaderSearch.svelte_svelte_type_style_lang-50804c02.js";
 import { C as Close, B as Button, u as user } from "../chunks/Close-d254d283.js";
@@ -2620,22 +2620,26 @@ function instance($$self, $$props, $$invalidate) {
   }
   function report_post(reported_post) {
     const post_obj = reported_post.object;
-    if (reported_post.reports.length == 4) {
-      post_obj.destroy();
-    } else {
-      reported_post.reports.push($user.name);
-      post_obj.set("reports", reported_post.reports);
+    if (reported_post.reports && reported_post.reports.includes($user.name)) {
+      return;
+    } else if (reported_post.reports == void 0) {
+      reported_post.reports = [];
     }
+    reported_post.reports.push($user.name);
+    post_obj.set("reports", reported_post.reports);
+    post_obj.save();
     console.log(reported_post);
   }
   function report_comment(reported_comment) {
     const comment_obj = reported_comment.object;
-    if (reported_comment.reports.length == 4) {
-      comment_obj.destroy();
-    } else {
-      reported_comment.reports.push($user.name);
-      comment_obj.set("reports", reported_comment.reports);
+    if (reported_comment.reports && reported_comment.reports.includes($user.name)) {
+      return;
+    } else if (reported_comment.reports == void 0) {
+      reported_comment.reports = [];
     }
+    reported_comment.reports.push($user.name);
+    comment_obj.set("reports", reported_comment.reports);
+    comment_obj.save();
     console.log(reported_comment);
   }
   function search_value_binding(value) {

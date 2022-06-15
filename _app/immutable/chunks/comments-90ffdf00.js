@@ -15,12 +15,16 @@ const fetchBlogs = async (username) => {
       const id = object.id;
       let title = object.get("title");
       let post = object.get("post");
+      let reports = object.get("reports");
+      if (reports && reports.length > 2) {
+        post = "This post is hidden because it has been reported multiple times.";
+        title = "";
+      }
       let likes = object.get("likes");
       let users_liked = object.get("users_liked");
       const name = object.get("user");
       const email = object.get("email");
       let createdAt = new Date(object.get("createdAt")).toLocaleString();
-      let reports = object.get("reports");
       if (username == name) {
         data.push({ id, title, post, users_liked, likes, object, user: name, email, createdAt, reports });
       } else {
@@ -182,11 +186,15 @@ const fetchComments = async () => {
     let data = [];
     for (const object of results) {
       let post_id = object.get("post_id");
+      let reports = object.get("reports");
       let comment = object.get("comment");
+      if (reports && reports.length > 2) {
+        comment = "This comment is hidden because it has been reported multiple times.";
+      }
       let user_commented = object.get("user");
       let createdAt = object.get("createdAt");
       let comment_id = object.id;
-      data.push({ user_commented, object, post_id, comment, createdAt, comment_id });
+      data.push({ user_commented, object, post_id, comment, createdAt, comment_id, reports });
     }
     comments.set(data);
   });
