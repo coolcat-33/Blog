@@ -779,7 +779,7 @@ const components = [
   () => __vitePreload(() => import("./pages/help.svelte-090b9eec.js"), true ? ["pages/help.svelte-090b9eec.js","chunks/index-fe8f50da.js"] : void 0),
   () => __vitePreload(() => import("./pages/index.svelte-a61727a0.js"), true ? ["pages/index.svelte-a61727a0.js","chunks/index-fe8f50da.js"] : void 0),
   () => __vitePreload(() => import("./pages/myblog.svelte-9764f779.js"), true ? ["pages/myblog.svelte-9764f779.js","chunks/index-fe8f50da.js","chunks/comments-90ffdf00.js","assets/comments-51ae82fb.css","chunks/index-8a7c489c.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-50804c02.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/Close-d254d283.js","pages/createpost.svelte-48771d3c.js","assets/pages/createpost.svelte-d41af497.css","chunks/viewer-72edec5c.js"] : void 0),
-  () => __vitePreload(() => import("./pages/otherblog.svelte-5a8713a6.js"), true ? ["pages/otherblog.svelte-5a8713a6.js","chunks/index-fe8f50da.js","chunks/comments-90ffdf00.js","assets/comments-51ae82fb.css","chunks/index-8a7c489c.js","chunks/viewer-72edec5c.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-50804c02.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/Close-d254d283.js"] : void 0)
+  () => __vitePreload(() => import("./pages/otherblog.svelte-3146ad28.js"), true ? ["pages/otherblog.svelte-3146ad28.js","chunks/index-fe8f50da.js","chunks/comments-90ffdf00.js","assets/comments-51ae82fb.css","chunks/index-8a7c489c.js","chunks/viewer-72edec5c.js","chunks/HeaderSearch.svelte_svelte_type_style_lang-50804c02.js","assets/HeaderSearch.svelte_svelte_type_style_lang-dae0c45e.css","chunks/Close-d254d283.js"] : void 0)
 ];
 const dictionary = {
   "": [[0, 4], [1]],
@@ -889,7 +889,7 @@ function notifiable_store(value) {
 }
 function create_updated_store() {
   const { set, subscribe } = writable(false);
-  const initial = "1655289174227";
+  const initial = "1655371352348";
   let timeout;
   async function check() {
     clearTimeout(timeout);
