@@ -2011,6 +2011,7 @@ function create_default_slot_1(ctx) {
   let br0;
   let br1;
   let t2;
+  let strong;
   let t3_value = ctx[22].comment + "";
   let t3;
   let t4;
@@ -2032,6 +2033,7 @@ function create_default_slot_1(ctx) {
       br0 = element("br");
       br1 = element("br");
       t2 = space();
+      strong = element("strong");
       t3 = text(t3_value);
       t4 = space();
       br2 = element("br");
@@ -2051,7 +2053,10 @@ function create_default_slot_1(ctx) {
       br0 = claim_element(nodes, "BR", {});
       br1 = claim_element(nodes, "BR", {});
       t2 = claim_space(nodes);
-      t3 = claim_text(nodes, t3_value);
+      strong = claim_element(nodes, "STRONG", {});
+      var strong_nodes = children(strong);
+      t3 = claim_text(strong_nodes, t3_value);
+      strong_nodes.forEach(detach);
       t4 = claim_space(nodes);
       br2 = claim_element(nodes, "BR", {});
       br3 = claim_element(nodes, "BR", {});
@@ -2070,7 +2075,8 @@ function create_default_slot_1(ctx) {
       insert_hydration(target, br0, anchor);
       insert_hydration(target, br1, anchor);
       insert_hydration(target, t2, anchor);
-      insert_hydration(target, t3, anchor);
+      insert_hydration(target, strong, anchor);
+      append_hydration(strong, t3);
       insert_hydration(target, t4, anchor);
       insert_hydration(target, br2, anchor);
       insert_hydration(target, br3, anchor);
@@ -2103,7 +2109,7 @@ function create_default_slot_1(ctx) {
       if (detaching)
         detach(t2);
       if (detaching)
-        detach(t3);
+        detach(strong);
       if (detaching)
         detach(t4);
       if (detaching)
